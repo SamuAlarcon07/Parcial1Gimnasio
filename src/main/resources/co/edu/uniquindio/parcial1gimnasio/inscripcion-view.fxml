@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.InscripcionViewController"
+      spacing="15">
+
+    <padding>
+        <Insets top="25"
+                right="25"
+                bottom="25"
+                left="25"/>
+    </padding>
+
+
+    <Label text="Gestión de Inscripciones"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+
+    <!-- CLIENTE -->
+
+    <Label text="Cliente"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="txtTelefonoCliente"
+               promptText="Teléfono del cliente"/>
+
+
+    <!-- PLAN -->
+
+    <Label text="Plan"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="txtCodigoPlan"
+               promptText="Código del plan"/>
+
+
+    <!-- ENTRENADOR -->
+
+    <Label text="Entrenador"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Solo requerido para planes personalizados."/>
+
+    <TextField fx:id="txtIdentificacionEntrenador"
+               promptText="Identificación del entrenador"/>
+
+
+    <!-- SERVICIO ADICIONAL -->
+
+    <Label text="Servicio adicional"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Opcional. Ingrese el código de un servicio registrado."/>
+
+    <GridPane hgap="10" vgap="10">
+
+        <Label text="Código:"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtCodigoServicio"
+                   promptText="Código del servicio"
+                   GridPane.rowIndex="0"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Nombre:"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtNombreServicio"
+                   editable="false"
+                   promptText="Se obtiene del servicio registrado"
+                   GridPane.rowIndex="1"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Precio:"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtPrecioServicio"
+                   editable="false"
+                   promptText="Se obtiene del servicio registrado"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+
+    <!-- BOTÓN -->
+
+    <Button text="Crear inscripción"
+            onAction="#crearInscripcion"
+            prefWidth="220"/>
+
+</VBox>
