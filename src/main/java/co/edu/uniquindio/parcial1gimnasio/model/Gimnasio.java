@@ -7,7 +7,7 @@ package co.edu.uniquindio.parcial1gimnasio.model;
  * una única instancia del gimnasio durante la ejecución
  * de la aplicación.
  */
-public class Gimnasio {
+public final class Gimnasio {
 
     private static Gimnasio instancia;
 
