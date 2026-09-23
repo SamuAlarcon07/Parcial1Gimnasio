@@ -1,5 +1,8 @@
 package co.edu.uniquindio.parcial1gimnasio.model;
 
+/**
+ * Representa el plan básico ofrecido por SmartGym.
+ */
 public class PlanBasico extends Plan {
 
     public PlanBasico(String codigo, String nombre, String descripcion,

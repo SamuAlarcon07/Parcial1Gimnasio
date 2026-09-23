@@ -4,6 +4,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa un cliente registrado en SmartGym.
+ *
+ * Un cliente puede tener múltiples inscripciones durante
+ * su permanencia en el gimnasio.
+ */
 public class Cliente {
 
     private String nombreCompleto;
@@ -14,8 +20,9 @@ public class Cliente {
     private LocalDate fechaRegistro;
     private List<Inscripcion> inscripciones;
 
-    public Cliente(String nombreCompleto, String documento, String telefono,
-                   String email, int edad, LocalDate fechaRegistro) {
+    public Cliente(String nombreCompleto, String documento,
+                   String telefono, String email, int edad,
+                   LocalDate fechaRegistro) {
 
         this.nombreCompleto = nombreCompleto;
         this.documento = documento;
@@ -26,6 +33,11 @@ public class Cliente {
         this.inscripciones = new ArrayList<>();
     }
 
+    /**
+     * Registra una nueva inscripción para el cliente.
+     *
+     * @param inscripcion inscripción que se desea agregar.
+     */
     public void agregarInscripcion(Inscripcion inscripcion) {
         inscripciones.add(inscripcion);
     }

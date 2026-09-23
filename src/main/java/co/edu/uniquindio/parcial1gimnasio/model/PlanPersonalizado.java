@@ -1,15 +1,27 @@
 package co.edu.uniquindio.parcial1gimnasio.model;
 
+/**
+ * Representa un plan personalizado de entrenamiento.
+ *
+ * Además de la información general del plan, contiene
+ * las sesiones con entrenador, la especialidad requerida
+ * y los objetivos del cliente.
+ */
 public class PlanPersonalizado extends Plan {
 
     private int cantidadSesiones;
     private String especialidadRequerida;
     private String objetivosCliente;
 
-    public PlanPersonalizado(String codigo, String nombre, String descripcion,
-                             int duracionMeses, double valorMensual,
-                             int cantidadSesiones, String especialidadRequerida,
-                             String objetivosCliente) {
+    public PlanPersonalizado(
+            String codigo,
+            String nombre,
+            String descripcion,
+            int duracionMeses,
+            double valorMensual,
+            int cantidadSesiones,
+            String especialidadRequerida,
+            String objetivosCliente) {
 
         super(codigo, nombre, descripcion, duracionMeses, valorMensual);
 

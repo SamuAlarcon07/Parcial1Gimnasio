@@ -1,5 +1,8 @@
 package co.edu.uniquindio.parcial1gimnasio.model;
 
+/**
+ * Representa un servicio adicional ofrecido por el gimnasio.
+ */
 public class ServicioAdicional {
 
     private String codigo;

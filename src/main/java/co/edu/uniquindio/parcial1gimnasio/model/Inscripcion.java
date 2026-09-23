@@ -4,6 +4,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa la adquisición de un plan por parte de un cliente.
+ *
+ * La inscripción relaciona al cliente con su plan,
+ * los servicios adicionales adquiridos y el entrenador
+ * responsable cuando se trata de un plan personalizado.
+ */
 public class Inscripcion {
 
     private Cliente cliente;
@@ -12,13 +19,21 @@ public class Inscripcion {
     private List<ServicioAdicional> serviciosAdicionales;
     private Entrenador entrenador;
 
-    public Inscripcion(Cliente cliente, Plan plan, LocalDate fechaInscripcion) {
+    public Inscripcion(Cliente cliente, Plan plan,
+                       LocalDate fechaInscripcion) {
+
         this.cliente = cliente;
         this.plan = plan;
         this.fechaInscripcion = fechaInscripcion;
         this.serviciosAdicionales = new ArrayList<>();
     }
 
+    /**
+     * Agrega un servicio adicional si se encuentra disponible.
+     *
+     * @param servicio servicio que se desea agregar.
+     * @throws IllegalArgumentException si el servicio no está disponible.
+     */
     public void agregarServicio(ServicioAdicional servicio) {
 
         if (!servicio.isDisponible()) {
@@ -34,6 +49,15 @@ public class Inscripcion {
         serviciosAdicionales.remove(servicio);
     }
 
+    /**
+     * Asigna un entrenador a la inscripción.
+     *
+     * <p>Solo los planes personalizados pueden tener un
+     * entrenador asignado.</p>
+     *
+     * @param entrenador entrenador responsable.
+     * @throws IllegalStateException si el plan no es personalizado.
+     */
     public void asignarEntrenador(Entrenador entrenador) {
 
         if (!(plan instanceof PlanPersonalizado)) {
@@ -45,6 +69,12 @@ public class Inscripcion {
         this.entrenador = entrenador;
     }
 
+    /**
+     * Calcula el valor total de la inscripción incluyendo
+     * el plan, servicios adicionales y sesiones del entrenador.
+     *
+     * @return valor total de la inscripción.
+     */
     public double calcularValorTotal() {
 
         double total = plan.calcularValor();
@@ -95,7 +125,6 @@ public class Inscripcion {
 
     public void setServiciosAdicionales(
             List<ServicioAdicional> serviciosAdicionales) {
-
         this.serviciosAdicionales = serviciosAdicionales;
     }
 

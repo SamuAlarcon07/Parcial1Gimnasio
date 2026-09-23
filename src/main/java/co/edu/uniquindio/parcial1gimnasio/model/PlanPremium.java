@@ -1,5 +1,8 @@
 package co.edu.uniquindio.parcial1gimnasio.model;
 
+/**
+ * Representa el plan premium ofrecido por SmartGym.
+ */
 public class PlanPremium extends Plan {
 
     public PlanPremium(String codigo, String nombre, String descripcion,

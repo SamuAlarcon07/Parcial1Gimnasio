@@ -1,5 +1,8 @@
 package co.edu.uniquindio.parcial1gimnasio.model;
 
+/**
+ * Representa un entrenador registrado en SmartGym.
+ */
 public class Entrenador {
 
     private String identificacion;

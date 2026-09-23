@@ -3,6 +3,13 @@ package co.edu.uniquindio.parcial1gimnasio.model;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Clase base para los diferentes tipos de planes de entrenamiento.
+ *
+ * Define la información común de los planes y establece
+ * el método que cada tipo de plan debe implementar para
+ * calcular su valor.
+ */
 public abstract class Plan {
 
     private String codigo;
@@ -25,12 +32,27 @@ public abstract class Plan {
         this.beneficios = new HashSet<>();
     }
 
+    /**
+     * Calcula el valor total correspondiente al tipo de plan.
+     *
+     * @return valor del plan.
+     */
     public abstract double calcularValor();
 
+    /**
+     * Agrega un beneficio al plan.
+     *
+     * @param beneficio beneficio que se desea agregar.
+     */
     public void agregarBeneficio(BeneficioPlan beneficio) {
         beneficios.add(beneficio);
     }
 
+    /**
+     * Elimina un beneficio del plan.
+     *
+     * @param beneficio beneficio que se desea eliminar.
+     */
     public void eliminarBeneficio(BeneficioPlan beneficio) {
         beneficios.remove(beneficio);
     }
