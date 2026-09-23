@@ -1,6 +1,5 @@
 package co.edu.uniquindio.parcial1gimnasio.viewController;
 
-<<<<<<< HEAD
 import co.edu.uniquindio.parcial1gimnasio.controller.ClienteController;
 import co.edu.uniquindio.parcial1gimnasio.controller.EntrenadorController;
 import co.edu.uniquindio.parcial1gimnasio.controller.InscripcionController;
@@ -13,26 +12,21 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-=======
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
 
 /**
  * Controlador de la ventana principal de SmartGym.
  */
 public class MainViewController {
 
-<<<<<<< HEAD
     private ClienteController clienteController;
     private PlanController planController;
     private InscripcionController inscripcionController;
     private EntrenadorController entrenadorController;
     private ServicioAdicionalController servicioAdicionalController;
 
-=======
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
     @FXML
     private Label lblBienvenida;
 
@@ -40,7 +34,6 @@ public class MainViewController {
     public void initialize() {
         lblBienvenida.setText("Bienvenido a SmartGym");
     }
-<<<<<<< HEAD
 
     public void setControllers(
             ClienteController clienteController,
@@ -212,6 +205,37 @@ public class MainViewController {
             e.printStackTrace();
         }
     }
-=======
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
+
+    @FXML
+    private void abrirReportes() {
+
+        try {
+
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(
+                            "/co/edu/uniquindio/parcial1gimnasio/reportes-view.fxml"
+                    )
+            );
+
+            Scene scene =
+                    new Scene(loader.load(), 500, 450);
+
+            ReporteViewController controller =
+                    loader.getController();
+
+            controller.setInscripcionController(
+                    inscripcionController
+            );
+
+            Stage stage = new Stage();
+
+            stage.setTitle("SmartGym - Reportes");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+    }
 }

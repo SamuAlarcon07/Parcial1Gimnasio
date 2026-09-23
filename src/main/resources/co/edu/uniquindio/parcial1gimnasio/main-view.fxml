@@ -21,7 +21,6 @@
     <Label text="Sistema de gestión del gimnasio"/>
 
     <Button text="Clientes"
-<<<<<<< HEAD
             onAction="#abrirClientes"
             prefWidth="200"/>
 
@@ -39,17 +38,11 @@
 
     <Button text="Inscripciones"
             onAction="#abrirInscripciones"
-=======
             prefWidth="200"/>
 
-    <Button text="Planes"
+    <Button text="Reportes"
+            onAction="#abrirReportes"
             prefWidth="200"/>
 
-    <Button text="Inscripciones"
-            prefWidth="200"/>
-
-    <Button text="Servicios adicionales"
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
-            prefWidth="200"/>
 
 </VBox>

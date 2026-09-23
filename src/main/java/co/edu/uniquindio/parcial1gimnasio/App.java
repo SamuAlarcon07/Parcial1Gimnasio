@@ -1,21 +1,18 @@
 package co.edu.uniquindio.parcial1gimnasio;
 
-<<<<<<< HEAD
+
 import co.edu.uniquindio.parcial1gimnasio.controller.ClienteController;
 import co.edu.uniquindio.parcial1gimnasio.controller.EntrenadorController;
 import co.edu.uniquindio.parcial1gimnasio.controller.InscripcionController;
 import co.edu.uniquindio.parcial1gimnasio.controller.PlanController;
 import co.edu.uniquindio.parcial1gimnasio.controller.ServicioAdicionalController;
-=======
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-<<<<<<< HEAD
+
 import co.edu.uniquindio.parcial1gimnasio.viewController.MainViewController;
-=======
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
 
 import java.io.IOException;
 
@@ -24,7 +21,6 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-<<<<<<< HEAD
     private ClienteController clienteController;
     private PlanController planController;
     private InscripcionController inscripcionController;
@@ -41,8 +37,6 @@ public class App extends Application {
         servicioAdicionalController = new ServicioAdicionalController();
     }
 
-=======
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -54,7 +48,7 @@ public class App extends Application {
 
         Scene scene = new Scene(loader.load(), 500, 500);
 
-<<<<<<< HEAD
+
         MainViewController controller = loader.getController();
 
         controller.setControllers(
@@ -64,9 +58,7 @@ public class App extends Application {
                 entrenadorController,
                 servicioAdicionalController
         );
-
-=======
->>>>>>> a6060bfcdbb2a8e3201381ef2547ced5bede39b3
+        
         stage.setTitle("SmartGym");
         stage.setScene(scene);
         stage.show();
