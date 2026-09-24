@@ -1,5 +1,7 @@
 package co.edu.uniquindio.parcial1gimnasio.model;
 
+import java.util.List;
+
 /**
  * Representa la información básica del gimnasio SmartGym.
  *
@@ -17,6 +19,11 @@ public final class Gimnasio {
     private String telefono;
     private String correoElectronico;
     private String paginaWeb;
+    private List<ServicioAdicional> serviciosAdicionales;
+    private List<Cliente> clientes;
+    private List<Entrenador> entrenadores;
+    private List<Inscripcion> inscripciones;
+    private List<Plan> planes;
 
     private Gimnasio(String nombreComercial, String nit,
                      String direccion, String telefono,

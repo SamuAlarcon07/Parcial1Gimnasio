@@ -1,0 +1,495 @@
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f1f1f1;
+}
+
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.sidebar {
+    -fx-background-color: #0d151d;
+    -fx-padding: 22 15 15 15;
+}
+
+.logo-container {
+    -fx-padding: 8 12 25 12;
+}
+
+.logo {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.logo-orange {
+    -fx-text-fill: #ff7600;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.logo-subtitle {
+    -fx-text-fill: #87919b;
+    -fx-font-size: 10px;
+}
+
+.sidebar-quote {
+    -fx-padding: 10 15 15 15;
+}
+
+.sidebar-phrase {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-phrase-orange {
+    -fx-text-fill: #ff7600;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-line {
+    -fx-text-fill: #ff7600;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+
+/* =====================================================
+   MENÚ
+   ===================================================== */
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e4e7e9;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-alignment: CENTER_LEFT;
+
+    -fx-padding: 13 16;
+
+    -fx-background-radius: 9;
+    -fx-border-radius: 9;
+
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: #202a33;
+}
+
+.menu-button-active {
+    -fx-background-color: #ff7600;
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-alignment: CENTER_LEFT;
+
+    -fx-padding: 13 16;
+
+    -fx-background-radius: 9;
+    -fx-border-radius: 9;
+}
+
+
+/* =====================================================
+   SCROLL
+   ===================================================== */
+
+.main-scroll {
+    -fx-background-color: #f1f1f1;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.main-scroll > .viewport {
+    -fx-background-color: #f1f1f1;
+}
+
+.main-content {
+    -fx-padding: 0 24 30 24;
+
+    -fx-min-width: 0;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.top-header {
+    -fx-background-color: #121a22;
+
+    -fx-padding: 12 20;
+
+    -fx-min-height: 42;
+
+    -fx-max-width: Infinity;
+}
+
+.header-text {
+    -fx-text-fill: #ffffff;
+
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.header-separator {
+    -fx-text-fill: #4e565e;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    -fx-background-color: #111820;
+
+    -fx-background-radius: 18;
+
+    -fx-min-width: 0;
+    -fx-max-width: Infinity;
+
+    -fx-min-height: 245px;
+    -fx-pref-height: 245px;
+    -fx-max-height: 245px;
+
+    -fx-padding: 0;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.25),
+            18,
+            0.1,
+            0,
+            5
+    );
+}
+
+
+/* =====================================================
+   IMAGEN DEL HERO
+   ===================================================== */
+
+.hero ImageView {
+    -fx-opacity: 1;
+}
+
+
+/* =====================================================
+   CAPA OSCURA DEL HERO
+   ===================================================== */
+
+.hero-overlay {
+    -fx-background-color: linear-gradient(
+            to right,
+            rgba(8, 13, 18, 0.98) 0%,
+            rgba(8, 13, 18, 0.88) 32%,
+            rgba(8, 13, 18, 0.40) 62%,
+            rgba(255, 118, 0, 0.10) 100%
+    );
+
+    -fx-background-radius: 18;
+}
+
+
+/* =====================================================
+   CONTENIDO DEL HERO
+   ===================================================== */
+
+.hero-content {
+    -fx-padding: 28 30;
+}
+
+
+/* =====================================================
+   TEXTOS DEL HERO
+   ===================================================== */
+
+.hero-title-small {
+    -fx-text-fill: white;
+
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.hero-title {
+    -fx-text-fill: white;
+
+    -fx-font-size: 46px;
+    -fx-font-weight: bold;
+}
+
+.hero-title-orange {
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 46px;
+    -fx-font-weight: bold;
+}
+
+.hero-description {
+    -fx-text-fill: #f0f0f0;
+
+    -fx-font-size: 15px;
+}
+
+.orange-line {
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+}
+
+.hero-phrase {
+    -fx-text-fill: white;
+
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+
+/* =====================================================
+   PANEL DERECHO DEL HERO
+   ===================================================== */
+
+.hero-visual {
+    -fx-background-color: rgba(10, 14, 18, 0.35);
+
+    -fx-background-radius: 18;
+
+    -fx-padding: 20;
+
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 18;
+}
+
+.hero-visual-text {
+    -fx-text-fill: white;
+
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+
+.hero-visual-orange {
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+
+.hero-visual-line {
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+
+
+/* =====================================================
+   SECCIONES
+   ===================================================== */
+
+.section-title {
+    -fx-text-fill: #151b21;
+
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+
+/* =====================================================
+   TARJETAS DE MÓDULOS
+   ===================================================== */
+
+.module-card {
+    -fx-background-color: #ffffff;
+
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+
+    -fx-border-color: #e6e6e6;
+
+    -fx-padding: 16;
+
+    -fx-min-width: 0;
+
+    -fx-min-height: 120;
+
+    -fx-max-width: Infinity;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.12),
+            10,
+            0.1,
+            0,
+            3
+    );
+}
+
+.module-card:hover {
+    -fx-border-color: #ff7600;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(255,118,0,0.28),
+            16,
+            0.15,
+            0,
+            4
+    );
+}
+
+
+/* =====================================================
+   ICONOS
+   ===================================================== */
+
+.module-icon {
+    -fx-background-color: #fff0e3;
+
+    -fx-background-radius: 12;
+
+    -fx-padding: 9;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 23px;
+
+    -fx-min-width: 45;
+    -fx-min-height: 45;
+
+    -fx-alignment: CENTER;
+}
+
+
+/* =====================================================
+   TÍTULOS
+   ===================================================== */
+
+.module-title {
+    -fx-text-fill: #151b21;
+
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+
+/* =====================================================
+   DESCRIPCIONES
+   ===================================================== */
+
+.module-description {
+    -fx-text-fill: #747c84;
+
+    -fx-font-size: 12px;
+}
+
+
+/* =====================================================
+   BOTÓN CIRCULAR
+   ===================================================== */
+
+.round-button {
+    -fx-background-color: #fff0e3;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+
+    -fx-min-width: 35;
+    -fx-min-height: 35;
+
+    -fx-max-width: 35;
+    -fx-max-height: 35;
+
+    -fx-padding: 0;
+
+    -fx-cursor: hand;
+}
+
+.round-button:hover {
+    -fx-background-color: #ff7600;
+    -fx-text-fill: #ffffff;
+}
+
+
+/* =====================================================
+   ESTADÍSTICAS
+   ===================================================== */
+
+.stat-card {
+    -fx-background-color: #171f27;
+
+    -fx-background-radius: 14;
+
+    -fx-padding: 15;
+
+    -fx-min-width: 0;
+
+    -fx-min-height: 82;
+
+    -fx-max-width: Infinity;
+}
+
+.stat-icon {
+    -fx-background-color: rgba(255,118,0,0.13);
+
+    -fx-background-radius: 12;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 24px;
+
+    -fx-min-width: 45;
+    -fx-min-height: 45;
+
+    -fx-alignment: CENTER;
+}
+
+.stat-title {
+    -fx-text-fill: #aab1b8;
+
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.stat-number {
+    -fx-text-fill: #ffffff;
+
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.stat-subtitle {
+    -fx-text-fill: #858e97;
+
+    -fx-font-size: 11px;
+}
+
+
+/* =====================================================
+   MENSAJE FINAL
+   ===================================================== */
+
+.final-message {
+    -fx-padding: 12;
+}
+
+.final-message-text {
+    -fx-text-fill: #ff7600;
+
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}

@@ -1,23 +1,21 @@
 package co.edu.uniquindio.parcial1gimnasio;
 
-
 import co.edu.uniquindio.parcial1gimnasio.controller.ClienteController;
 import co.edu.uniquindio.parcial1gimnasio.controller.EntrenadorController;
 import co.edu.uniquindio.parcial1gimnasio.controller.InscripcionController;
 import co.edu.uniquindio.parcial1gimnasio.controller.PlanController;
 import co.edu.uniquindio.parcial1gimnasio.controller.ServicioAdicionalController;
+import co.edu.uniquindio.parcial1gimnasio.viewController.MainViewController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import co.edu.uniquindio.parcial1gimnasio.viewController.MainViewController;
-
 import java.io.IOException;
 
 /**
- * Clase principal que inicia la aplicación SmartGym.
+ * Clase principal de la aplicación SmartGym.
  */
 public class App extends Application {
 
@@ -27,15 +25,22 @@ public class App extends Application {
     private EntrenadorController entrenadorController;
     private ServicioAdicionalController servicioAdicionalController;
 
+
     @Override
     public void init() {
 
         clienteController = new ClienteController();
+
         planController = new PlanController();
+
         inscripcionController = new InscripcionController();
+
         entrenadorController = new EntrenadorController();
-        servicioAdicionalController = new ServicioAdicionalController();
+
+        servicioAdicionalController =
+                new ServicioAdicionalController();
     }
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -46,10 +51,12 @@ public class App extends Application {
                 )
         );
 
-        Scene scene = new Scene(loader.load(), 500, 500);
+        Scene scene = new Scene(loader.load());
 
 
-        MainViewController controller = loader.getController();
+        MainViewController controller =
+                loader.getController();
+
 
         controller.setControllers(
                 clienteController,
@@ -58,13 +65,51 @@ public class App extends Application {
                 entrenadorController,
                 servicioAdicionalController
         );
-        
-        stage.setTitle("SmartGym");
+
+
+        // =========================================
+        // CONFIGURACIÓN DE LA VENTANA
+        // =========================================
+
+        stage.setTitle(
+                "SmartGym - Sistema de gestión de gimnasio"
+        );
+
         stage.setScene(scene);
+
+
+        /*
+         * Tamaño inicial de la ventana.
+         */
+        stage.setWidth(1100);
+
+        stage.setHeight(850);
+
+
+        /*
+         * Evita que la ventana se haga demasiado pequeña
+         * y termine deformando la interfaz.
+         */
+        stage.setMinWidth(1100);
+
+        stage.setMinHeight(700);
+
+
+        /*
+         * Centra la ventana en la pantalla.
+         */
+        stage.centerOnScreen();
+
+
+        /*
+         * Muestra la ventana.
+         */
         stage.show();
     }
 
+
     public static void main(String[] args) {
+
         launch();
     }
 }
