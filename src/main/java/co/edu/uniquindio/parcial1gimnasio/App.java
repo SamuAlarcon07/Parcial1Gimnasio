@@ -10,6 +10,7 @@ import co.edu.uniquindio.parcial1gimnasio.viewController.MainViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,38 +26,32 @@ public class App extends Application {
     private EntrenadorController entrenadorController;
     private ServicioAdicionalController servicioAdicionalController;
 
-
     @Override
     public void init() {
 
         clienteController = new ClienteController();
-
         planController = new PlanController();
-
         inscripcionController = new InscripcionController();
-
         entrenadorController = new EntrenadorController();
-
         servicioAdicionalController =
                 new ServicioAdicionalController();
     }
 
-
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(
-                App.class.getResource(
-                        "/co/edu/uniquindio/parcial1gimnasio/main-view.fxml"
-                )
-        );
+        FXMLLoader loader =
+                new FXMLLoader(
+                        App.class.getResource(
+                                "/co/edu/uniquindio/parcial1gimnasio/main-view.fxml"
+                        )
+                );
 
-        Scene scene = new Scene(loader.load());
-
+        Scene scene =
+                new Scene(loader.load());
 
         MainViewController controller =
                 loader.getController();
-
 
         controller.setControllers(
                 clienteController,
@@ -66,10 +61,22 @@ public class App extends Application {
                 servicioAdicionalController
         );
 
+        // =====================================================
+        // ICONO DE SMARTGYM
+        // =====================================================
 
-        // =========================================
+        Image iconoSmartGym =
+                new Image(
+                        App.class.getResourceAsStream(
+                                "/co/edu/uniquindio/parcial1gimnasio/logo_mancuerna_smartgym.png"
+                        )
+                );
+
+        stage.getIcons().add(iconoSmartGym);
+
+        // =====================================================
         // CONFIGURACIÓN DE LA VENTANA
-        // =========================================
+        // =====================================================
 
         stage.setTitle(
                 "SmartGym - Sistema de gestión de gimnasio"
@@ -77,39 +84,18 @@ public class App extends Application {
 
         stage.setScene(scene);
 
-
-        /*
-         * Tamaño inicial de la ventana.
-         */
         stage.setWidth(1100);
-
         stage.setHeight(850);
 
-
-        /*
-         * Evita que la ventana se haga demasiado pequeña
-         * y termine deformando la interfaz.
-         */
         stage.setMinWidth(1100);
-
         stage.setMinHeight(700);
 
-
-        /*
-         * Centra la ventana en la pantalla.
-         */
         stage.centerOnScreen();
 
-
-        /*
-         * Muestra la ventana.
-         */
         stage.show();
     }
 
-
     public static void main(String[] args) {
-
         launch();
     }
 }

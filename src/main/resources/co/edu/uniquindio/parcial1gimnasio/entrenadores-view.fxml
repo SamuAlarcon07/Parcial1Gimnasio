@@ -3,76 +3,300 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.EntrenadorViewController"
-      spacing="15">
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.EntrenadorViewController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            stylesheets="@styles.css"
+            styleClass="entrenador-scroll">
 
-    <padding>
-        <Insets top="25" right="25" bottom="25" left="25"/>
-    </padding>
+    <content>
 
-    <Label text="Gestión de Entrenadores"
-           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <VBox spacing="18"
+              styleClass="entrenador-page">
 
-    <GridPane hgap="10" vgap="10">
-
-        <Label text="Identificación:"
-               GridPane.rowIndex="0"
-               GridPane.columnIndex="0"/>
-
-        <TextField fx:id="txtIdentificacion"
-                   promptText="Identificación"
-                   GridPane.rowIndex="0"
-                   GridPane.columnIndex="1"/>
-
-
-        <Label text="Nombre:"
-               GridPane.rowIndex="1"
-               GridPane.columnIndex="0"/>
-
-        <TextField fx:id="txtNombre"
-                   promptText="Nombre completo"
-                   GridPane.rowIndex="1"
-                   GridPane.columnIndex="1"/>
+            <padding>
+                <Insets top="0"
+                        right="28"
+                        bottom="30"
+                        left="28"/>
+            </padding>
 
 
-        <Label text="Especialidad:"
-               GridPane.rowIndex="2"
-               GridPane.columnIndex="0"/>
+            <!-- ================================================= -->
+            <!-- BARRA SUPERIOR -->
+            <!-- ================================================= -->
 
-        <TextField fx:id="txtEspecialidad"
-                   promptText="Especialidad"
-                   GridPane.rowIndex="2"
-                   GridPane.columnIndex="1"/>
+            <HBox alignment="CENTER_LEFT"
+                  styleClass="entrenador-topbar">
+
+                <HBox alignment="CENTER_LEFT"
+                      spacing="0">
+
+                    <Label text="Smart"
+                           styleClass="entrenador-logo-white"/>
+
+                    <Label text="Gym"
+                           styleClass="entrenador-logo-orange"/>
+
+                </HBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="←  Volver al menú"
+                        onAction="#volverMenu"
+                        styleClass="entrenador-back-button"/>
+
+            </HBox>
 
 
-        <Label text="Teléfono:"
-               GridPane.rowIndex="3"
-               GridPane.columnIndex="0"/>
+            <!-- ================================================= -->
+            <!-- ENCABEZADO -->
+            <!-- ================================================= -->
 
-        <TextField fx:id="txtTelefono"
-                   promptText="Teléfono"
-                   GridPane.rowIndex="3"
-                   GridPane.columnIndex="1"/>
+            <HBox alignment="CENTER_LEFT"
+                  spacing="15"
+                  styleClass="entrenador-page-header">
+
+                <VBox spacing="4">
+
+                    <Label text="Gestión de Entrenadores"
+                           styleClass="entrenador-main-title"/>
+
+                    <Label text="Registra y administra los entrenadores de SmartGym."
+                           styleClass="entrenador-main-subtitle"/>
+
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <VBox alignment="CENTER"
+                      styleClass="entrenador-header-badge">
+
+                    <Label text="ENTRENADORES"
+                           styleClass="entrenador-badge-title"/>
+
+                    <Label text="SMARTGYM"
+                           styleClass="entrenador-badge-subtitle"/>
+
+                </VBox>
+
+            </HBox>
 
 
-        <Label text="Tarifa por sesión:"
-               GridPane.rowIndex="4"
-               GridPane.columnIndex="0"/>
+            <!-- ================================================= -->
+            <!-- TARJETA PRINCIPAL -->
+            <!-- ================================================= -->
 
-        <TextField fx:id="txtTarifa"
-                   promptText="Tarifa por sesión"
-                   GridPane.rowIndex="4"
-                   GridPane.columnIndex="1"/>
+            <VBox spacing="18"
+                  styleClass="entrenador-card">
 
-    </GridPane>
 
-    <Button text="Registrar entrenador"
-            onAction="#registrarEntrenador"
-            prefWidth="220"/>
+                <!-- TITULO -->
 
-</VBox>
+                <HBox alignment="CENTER_LEFT"
+                      spacing="12">
+
+                    <Label text="♟"
+                           styleClass="entrenador-section-icon"/>
+
+                    <VBox spacing="2">
+
+                        <Label text="Datos del entrenador"
+                               styleClass="entrenador-section-title"/>
+
+                        <Label text="Complete la información para registrar un nuevo entrenador."
+                               styleClass="entrenador-section-subtitle"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- FORMULARIO -->
+                <!-- ================================================= -->
+
+                <GridPane hgap="15"
+                          vgap="14"
+                          styleClass="entrenador-form">
+
+                    <columnConstraints>
+
+                        <ColumnConstraints minWidth="135"
+                                           prefWidth="135"/>
+
+                        <ColumnConstraints hgrow="ALWAYS"/>
+
+                    </columnConstraints>
+
+
+                    <!-- IDENTIFICACION -->
+
+                    <Label text="Identificación"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="0"
+                           styleClass="entrenador-form-label"/>
+
+                    <TextField fx:id="txtIdentificacion"
+                               promptText="Número de identificación"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="1"
+                               styleClass="entrenador-field"/>
+
+
+                    <!-- NOMBRE -->
+
+                    <Label text="Nombre completo"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="0"
+                           styleClass="entrenador-form-label"/>
+
+                    <TextField fx:id="txtNombre"
+                               promptText="Ej. Carlos Ramírez"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="1"
+                               styleClass="entrenador-field"/>
+
+
+                    <!-- ESPECIALIDAD -->
+
+                    <Label text="Especialidad"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="0"
+                           styleClass="entrenador-form-label"/>
+
+                    <TextField fx:id="txtEspecialidad"
+                               promptText="Ej. Entrenamiento funcional"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="1"
+                               styleClass="entrenador-field"/>
+
+
+                    <!-- TELEFONO -->
+
+                    <Label text="Teléfono"
+                           GridPane.rowIndex="3"
+                           GridPane.columnIndex="0"
+                           styleClass="entrenador-form-label"/>
+
+                    <TextField fx:id="txtTelefono"
+                               promptText="Número de teléfono"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="1"
+                               styleClass="entrenador-field"/>
+
+
+                    <!-- TARIFA -->
+
+                    <Label text="Tarifa por sesión"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="0"
+                           styleClass="entrenador-form-label"/>
+
+                    <TextField fx:id="txtTarifa"
+                               promptText="Ej. 50000"
+                               GridPane.rowIndex="4"
+                               GridPane.columnIndex="1"
+                               styleClass="entrenador-field"/>
+
+                </GridPane>
+
+
+                <!-- ================================================= -->
+                <!-- INFORMACION -->
+                <!-- ================================================= -->
+
+                <HBox alignment="CENTER_LEFT"
+                      spacing="10"
+                      styleClass="entrenador-info-box">
+
+                    <Label text="\$"
+                           styleClass="entrenador-info-icon"/>
+
+                    <VBox spacing="2">
+
+                        <Label text="Tarifa por sesión"
+                               styleClass="entrenador-info-title"/>
+
+                        <Label text="Ingrese el valor correspondiente a una sesión de entrenamiento."
+                               styleClass="entrenador-info-text"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- BOTONES CRUD -->
+                <!-- ================================================= -->
+
+                <HBox spacing="10"
+                      alignment="CENTER">
+
+                    <Button fx:id="btnRegistrar"
+                            text="✓   Registrar entrenador"
+                            onAction="#registrarEntrenador"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="entrenador-primary-button"/>
+
+                    <Button text="🔎   Buscar entrenador"
+                            onAction="#buscarEntrenador"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="entrenador-primary-button"/>
+
+                    <Button fx:id="btnActualizar"
+                            text="✎   Guardar cambios"
+                            onAction="#actualizarEntrenador"
+                            disable="true"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="entrenador-primary-button"/>
+
+                    <Button fx:id="btnEliminar"
+                            text="✕   Eliminar entrenador"
+                            onAction="#eliminarEntrenador"
+                            disable="true"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="entrenador-primary-button"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- FOOTER -->
+            <!-- ================================================= -->
+
+            <HBox alignment="CENTER_LEFT"
+                  styleClass="entrenador-footer">
+
+                <Label text="SmartGym"
+                       styleClass="entrenador-footer-brand"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label text="Gestión de entrenadores"
+                       styleClass="entrenador-footer-text"/>
+
+            </HBox>
+
+        </VBox>
+
+    </content>
+
+</ScrollPane>

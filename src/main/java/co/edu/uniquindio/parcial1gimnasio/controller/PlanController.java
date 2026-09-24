@@ -7,6 +7,9 @@ import java.util.List;
 
 /**
  * Controlador encargado de gestionar los planes de SmartGym.
+ *
+ * Incluye las operaciones CRUD:
+ * Crear, consultar, actualizar y eliminar planes.
  */
 public class PlanController {
 
@@ -44,12 +47,54 @@ public class PlanController {
     }
 
     /**
+     * Verifica si un código ya pertenece a otro plan.
+     *
+     * @param codigo código que se desea comprobar.
+     * @param planActual plan que se está editando.
+     * @return true si el código pertenece a otro plan.
+     */
+    public boolean codigoYaRegistrado(
+            String codigo,
+            Plan planActual) {
+
+        for (Plan plan : planes) {
+
+            if (plan != planActual
+                    && plan.getCodigo().equals(codigo)) {
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Actualiza un plan existente.
+     *
+     * @param plan plan que se desea actualizar.
+     */
+    public void actualizarPlan(Plan plan) {
+
+        /*
+         * El objeto ya contiene los nuevos datos gracias
+         * a sus setters.
+         *
+         * No es necesario eliminarlo y volverlo a agregar.
+         */
+        if (!planes.contains(plan)) {
+            planes.add(plan);
+        }
+    }
+
+    /**
      * Elimina un plan.
      *
      * @param plan plan que se desea eliminar.
+     * @return true si fue eliminado.
      */
-    public void eliminarPlan(Plan plan) {
-        planes.remove(plan);
+    public boolean eliminarPlan(Plan plan) {
+        return planes.remove(plan);
     }
 
     public List<Plan> getPlanes() {

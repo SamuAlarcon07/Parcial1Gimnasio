@@ -1,418 +1,492 @@
+/* =========================================================
+   SMARTGYM - ESTILOS PRINCIPALES
+   ========================================================= */
+
 .root {
     -fx-font-family: "Segoe UI";
-    -fx-background-color: #f1f1f1;
+    -fx-background-color: #f4f5f7;
 }
 
 
-/* =====================================================
+/* =========================================================
    SIDEBAR
-   ===================================================== */
+   ========================================================= */
 
 .sidebar {
-    -fx-background-color: #0d151d;
-    -fx-padding: 22 15 15 15;
+    -fx-background-color: #0b141d;
+    -fx-padding: 0;
+    -fx-spacing: 0;
 }
 
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 .logo-container {
-    -fx-padding: 8 12 25 12;
+    -fx-padding: 25 20 18 20;
+    -fx-background-color: #0b141d;
 }
 
 .logo {
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 28px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
 }
 
 .logo-orange {
-    -fx-text-fill: #ff7600;
-    -fx-font-size: 28px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ff7600;
 }
 
 .logo-subtitle {
-    -fx-text-fill: #87919b;
+    -fx-font-family: "Segoe UI";
     -fx-font-size: 10px;
-}
-
-.sidebar-quote {
-    -fx-padding: 10 15 15 15;
-}
-
-.sidebar-phrase {
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-}
-
-.sidebar-phrase-orange {
-    -fx-text-fill: #ff7600;
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-}
-
-.sidebar-line {
-    -fx-text-fill: #ff7600;
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
+    -fx-text-fill: #8b98a5;
 }
 
 
-/* =====================================================
-   MENÚ
-   ===================================================== */
+/* =========================================================
+   MENU
+   ========================================================= */
 
-.menu-button {
-    -fx-background-color: transparent;
-    -fx-text-fill: #e4e7e9;
+.sidebar-menu {
+    -fx-padding: 8 14 10 14;
+    -fx-spacing: 7;
+    -fx-background-color: #0b141d;
+}
 
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
+.menu-button,
+.menu-button-active {
+    -fx-pref-height: 44px;
+    -fx-min-height: 44px;
+    -fx-max-height: 44px;
 
     -fx-alignment: CENTER_LEFT;
 
-    -fx-padding: 13 16;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
 
-    -fx-background-radius: 9;
-    -fx-border-radius: 9;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+
+    -fx-padding: 0 12 0 14;
 
     -fx-cursor: hand;
 }
 
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e9edf0;
+}
+
 .menu-button:hover {
-    -fx-background-color: #202a33;
+    -fx-background-color: #18232e;
+    -fx-text-fill: #ff7600;
 }
 
 .menu-button-active {
     -fx-background-color: #ff7600;
-    -fx-text-fill: white;
+    -fx-text-fill: #ffffff;
+}
 
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-
-    -fx-alignment: CENTER_LEFT;
-
-    -fx-padding: 13 16;
-
-    -fx-background-radius: 9;
-    -fx-border-radius: 9;
+.menu-button-active:hover {
+    -fx-background-color: #ff8514;
 }
 
 
-/* =====================================================
-   SCROLL
-   ===================================================== */
+/* =========================================================
+   FOTO DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-photo {
+
+    -fx-pref-height: 270px;
+    -fx-min-height: 270px;
+    -fx-max-height: 270px;
+
+    -fx-pref-width: 215px;
+    -fx-min-width: 215px;
+    -fx-max-width: 215px;
+
+    -fx-background-color: #0b141d;
+}
+
+
+/* =========================================================
+   IMAGEN DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-photo .image-view {
+    -fx-opacity: 0.88;
+}
+
+
+/* =========================================================
+   DEGRADADO DE LA FOTO
+   ========================================================= */
+
+/*
+ * El color superior es EXACTAMENTE el mismo
+ * que el fondo del sidebar.
+ *
+ * Así la fotografía no empieza de golpe.
+ */
+
+.sidebar-photo-overlay {
+
+    -fx-background-color:
+            linear-gradient(
+                    to bottom,
+
+                    #0b141d 0%,
+
+                    rgba(11, 20, 29, 0.98) 8%,
+
+                    rgba(11, 20, 29, 0.88) 20%,
+
+                    rgba(11, 20, 29, 0.55) 35%,
+
+                    rgba(11, 20, 29, 0.18) 52%,
+
+                    rgba(11, 20, 29, 0.38) 68%,
+
+                    rgba(11, 20, 29, 0.78) 84%,
+
+                    #0b141d 100%
+            );
+}
+
+
+/* =========================================================
+   TEXTO SOBRE LA FOTO
+   ========================================================= */
+
+.sidebar-photo-content {
+    -fx-padding: 18 12 16 12;
+}
+
+.sidebar-photo-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.sidebar-photo-orange {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff7600;
+}
+
+.sidebar-photo-line {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   SCROLL PRINCIPAL
+   ========================================================= */
 
 .main-scroll {
-    -fx-background-color: #f1f1f1;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
+    -fx-background-color: #f4f5f7;
+    -fx-border-width: 0;
 }
 
 .main-scroll > .viewport {
-    -fx-background-color: #f1f1f1;
+    -fx-background-color: #f4f5f7;
 }
+
+.main-scroll .scroll-bar:vertical {
+    -fx-background-color: #eef0f2;
+}
+
+.main-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #b8bec5;
+    -fx-background-radius: 8px;
+}
+
+.main-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #949ca5;
+}
+
+.main-scroll .scroll-bar:vertical .track {
+    -fx-background-color: #eef0f2;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
 
 .main-content {
-    -fx-padding: 0 24 30 24;
-
-    -fx-min-width: 0;
+    -fx-background-color: #f4f5f7;
+    -fx-padding: 0 24 30 15;
+    -fx-spacing: 14;
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER
-   ===================================================== */
+   ========================================================= */
 
 .top-header {
-    -fx-background-color: #121a22;
+    -fx-min-height: 56px;
+    -fx-pref-height: 56px;
 
-    -fx-padding: 12 20;
+    -fx-padding: 0 4 0 10;
 
-    -fx-min-height: 42;
-
-    -fx-max-width: Infinity;
+    -fx-background-color: #101b25;
 }
 
 .header-text {
-    -fx-text-fill: #ffffff;
-
+    -fx-font-family: "Segoe UI";
     -fx-font-size: 12px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
 }
+
+
+/*
+ * IMPORTANTE:
+ * El Separator NO debe tener background.
+ * Solo debe mostrarse su línea central.
+ */
 
 .header-separator {
-    -fx-text-fill: #4e565e;
+    -fx-padding: 0 10 0 10;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.header-separator .line {
+    -fx-border-color: #75818c;
+    -fx-border-width: 0 1px 0 0;
+    -fx-background-color: transparent;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-   ===================================================== */
+   ========================================================= */
 
 .hero {
-    -fx-background-color: #111820;
+    -fx-pref-height: 305px;
+    -fx-min-height: 305px;
+    -fx-max-height: 305px;
 
-    -fx-background-radius: 18;
+    -fx-background-color: #101820;
 
-    -fx-min-width: 0;
-    -fx-max-width: Infinity;
-
-    -fx-min-height: 245px;
-    -fx-pref-height: 245px;
-    -fx-max-height: 245px;
-
-    -fx-padding: 0;
-
-    -fx-effect: dropshadow(
-            gaussian,
-            rgba(0,0,0,0.25),
-            18,
-            0.1,
-            0,
-            5
-    );
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
 }
 
-
-/* =====================================================
-   IMAGEN DEL HERO
-   ===================================================== */
-
-.hero ImageView {
+.hero .image-view {
     -fx-opacity: 1;
 }
 
 
-/* =====================================================
-   CAPA OSCURA DEL HERO
-   ===================================================== */
+/* =========================================================
+   DEGRADADO DEL HERO
+   ========================================================= */
 
 .hero-overlay {
-    -fx-background-color: linear-gradient(
-            to right,
-            rgba(8, 13, 18, 0.98) 0%,
-            rgba(8, 13, 18, 0.88) 32%,
-            rgba(8, 13, 18, 0.40) 62%,
-            rgba(255, 118, 0, 0.10) 100%
-    );
 
-    -fx-background-radius: 18;
+    -fx-background-color:
+            linear-gradient(
+                    to right,
+
+                    rgba(3, 9, 14, 0.96) 0%,
+
+                    rgba(3, 9, 14, 0.82) 30%,
+
+                    rgba(3, 9, 14, 0.38) 65%,
+
+                    rgba(3, 9, 14, 0.05) 100%
+            );
+
+    -fx-background-radius: 15px;
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTENIDO DEL HERO
-   ===================================================== */
+   ========================================================= */
 
 .hero-content {
-    -fx-padding: 28 30;
+    -fx-padding: 0 28 0 28;
 }
 
-
-/* =====================================================
-   TEXTOS DEL HERO
-   ===================================================== */
-
 .hero-title-small {
-    -fx-text-fill: white;
-
-    -fx-font-size: 22px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 19px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
 }
 
 .hero-title {
-    -fx-text-fill: white;
-
-    -fx-font-size: 46px;
-    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 40px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #ffffff;
 }
 
 .hero-title-orange {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 40px;
+    -fx-font-weight: 900;
     -fx-text-fill: #ff7600;
-
-    -fx-font-size: 46px;
-    -fx-font-weight: bold;
 }
 
 .hero-description {
-    -fx-text-fill: #f0f0f0;
-
-    -fx-font-size: 15px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-line-spacing: 2px;
 }
 
 .orange-line {
-    -fx-text-fill: #ff7600;
-
-    -fx-font-size: 27px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ff7600;
 }
 
 .hero-phrase {
-    -fx-text-fill: white;
-
-    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
 }
 
 
-/* =====================================================
-   PANEL DERECHO DEL HERO
-   ===================================================== */
-
-.hero-visual {
-    -fx-background-color: rgba(10, 14, 18, 0.35);
-
-    -fx-background-radius: 18;
-
-    -fx-padding: 20;
-
-    -fx-border-color: rgba(255, 255, 255, 0.08);
-    -fx-border-radius: 18;
-}
-
-.hero-visual-text {
-    -fx-text-fill: white;
-
-    -fx-font-size: 21px;
-    -fx-font-weight: bold;
-}
-
-.hero-visual-orange {
-    -fx-text-fill: #ff7600;
-
-    -fx-font-size: 21px;
-    -fx-font-weight: bold;
-}
-
-.hero-visual-line {
-    -fx-text-fill: #ff7600;
-
-    -fx-font-size: 25px;
-    -fx-font-weight: bold;
-}
-
-
-/* =====================================================
-   SECCIONES
-   ===================================================== */
+/* =========================================================
+   TITULOS DE SECCION
+   ========================================================= */
 
 .section-title {
-    -fx-text-fill: #151b21;
-
-    -fx-font-size: 20px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
+    -fx-text-fill: #111820;
+    -fx-padding: 2 0 0 0;
 }
 
 
-/* =====================================================
-   TARJETAS DE MÓDULOS
-   ===================================================== */
+/* =========================================================
+   GRID DE MODULOS
+   ========================================================= */
+
+.modules-grid {
+    -fx-padding: 0;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
 
 .module-card {
     -fx-background-color: #ffffff;
 
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
+    -fx-background-radius: 12px;
 
-    -fx-border-color: #e6e6e6;
+    -fx-border-color: #e1e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
 
-    -fx-padding: 16;
+    -fx-padding: 12 8 10 8;
 
-    -fx-min-width: 0;
+    -fx-min-height: 148px;
+    -fx-pref-height: 148px;
 
-    -fx-min-height: 120;
-
-    -fx-max-width: Infinity;
-
-    -fx-effect: dropshadow(
-            gaussian,
-            rgba(0,0,0,0.12),
-            10,
-            0.1,
-            0,
-            3
-    );
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.12),
+                    5,
+                    0.1,
+                    0,
+                    2
+            );
 }
 
 .module-card:hover {
     -fx-border-color: #ff7600;
 
-    -fx-effect: dropshadow(
-            gaussian,
-            rgba(255,118,0,0.28),
-            16,
-            0.15,
-            0,
-            4
-    );
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.20),
+                    8,
+                    0.1,
+                    0,
+                    2
+            );
 }
 
 
-/* =====================================================
+/* =========================================================
    ICONOS
-   ===================================================== */
+   ========================================================= */
 
 .module-icon {
-    -fx-background-color: #fff0e3;
+    -fx-background-color: #fff0e5;
+    -fx-background-radius: 10px;
 
-    -fx-background-radius: 12;
+    -fx-min-width: 42px;
+    -fx-min-height: 42px;
 
-    -fx-padding: 9;
-
-    -fx-text-fill: #ff7600;
-
-    -fx-font-size: 23px;
-
-    -fx-min-width: 45;
-    -fx-min-height: 45;
+    -fx-pref-width: 42px;
+    -fx-pref-height: 42px;
 
     -fx-alignment: CENTER;
-}
 
-
-/* =====================================================
-   TÍTULOS
-   ===================================================== */
-
-.module-title {
-    -fx-text-fill: #151b21;
-
-    -fx-font-size: 17px;
-    -fx-font-weight: bold;
-}
-
-
-/* =====================================================
-   DESCRIPCIONES
-   ===================================================== */
-
-.module-description {
-    -fx-text-fill: #747c84;
-
-    -fx-font-size: 12px;
-}
-
-
-/* =====================================================
-   BOTÓN CIRCULAR
-   ===================================================== */
-
-.round-button {
-    -fx-background-color: #fff0e3;
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 19px;
 
     -fx-text-fill: #ff7600;
+}
+
+.module-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111820;
+}
+
+.module-description {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BOTONES CIRCULARES
+   ========================================================= */
+
+.round-button {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+
+    -fx-pref-width: 34px;
+    -fx-pref-height: 34px;
 
     -fx-font-size: 18px;
     -fx-font-weight: bold;
 
-    -fx-background-radius: 50%;
-    -fx-border-radius: 50%;
-
-    -fx-min-width: 35;
-    -fx-min-height: 35;
-
-    -fx-max-width: 35;
-    -fx-max-height: 35;
+    -fx-text-fill: #ff7600;
 
     -fx-padding: 0;
 
@@ -425,71 +499,3200 @@
 }
 
 
-/* =====================================================
-   ESTADÍSTICAS
-   ===================================================== */
+/* =========================================================
+   PARTE INFERIOR
+   ========================================================= */
 
-.stat-card {
-    -fx-background-color: #171f27;
+.bottom-grid {
+    -fx-padding: 0;
+}
 
-    -fx-background-radius: 14;
 
-    -fx-padding: 15;
+/* =========================================================
+   PANELES
+   ========================================================= */
 
-    -fx-min-width: 0;
+.dashboard-panel {
+    -fx-background-color: #ffffff;
 
-    -fx-min-height: 82;
+    -fx-background-radius: 12px;
 
-    -fx-max-width: Infinity;
+    -fx-border-color: #e1e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+
+    -fx-padding: 15px;
+
+    -fx-min-height: 245px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.10),
+                    5,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+
+/* =========================================================
+   TITULOS DE PANELES
+   ========================================================= */
+
+.panel-icon {
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 18px;
+    -fx-text-fill: #ff7600;
+}
+
+.panel-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111820;
+}
+
+.panel-link {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-text-fill: #6d7780;
+    -fx-cursor: hand;
+}
+
+.panel-link:hover {
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   FILTRO
+   ========================================================= */
+
+.filter-label {
+    -fx-background-color: #f3f5f7;
+    -fx-background-radius: 7px;
+
+    -fx-padding: 7 10 7 10;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #66717b;
+}
+
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.activity-table {
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #e1e4e7;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+
+    -fx-table-cell-border-color: transparent;
+}
+
+.activity-table .column-header-background {
+    -fx-background-color: #f0f2f4;
+    -fx-background-radius: 8px 8px 0 0;
+}
+
+.activity-table .column-header {
+    -fx-background-color: transparent;
+}
+
+.activity-table .column-header .label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27313a;
+}
+
+.activity-table .table-cell {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+    -fx-text-fill: #4e5861;
+    -fx-border-color: transparent;
+}
+
+.activity-table .table-row-cell {
+    -fx-background-color: #ffffff;
+}
+
+.activity-table .table-row-cell:hover {
+    -fx-background-color: #fff6ef;
+}
+
+.activity-table .placeholder .label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-text-fill: #a1a8ae;
+}
+
+
+/* =========================================================
+   ESTADISTICAS
+   ========================================================= */
+
+.stat-box {
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #e1e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-background-radius: 10px;
+
+    -fx-padding: 12px;
+
+    -fx-min-height: 68px;
+    -fx-pref-height: 68px;
 }
 
 .stat-icon {
-    -fx-background-color: rgba(255,118,0,0.13);
-
-    -fx-background-radius: 12;
-
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 18px;
     -fx-text-fill: #ff7600;
 
-    -fx-font-size: 24px;
-
-    -fx-min-width: 45;
-    -fx-min-height: 45;
+    -fx-min-width: 25px;
 
     -fx-alignment: CENTER;
 }
 
-.stat-title {
-    -fx-text-fill: #aab1b8;
+.stat-money {
+    -fx-background-color: #ff7600;
 
-    -fx-font-size: 10px;
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-family: "Segoe UI";
+
+    -fx-font-size: 9px;
     -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
 }
 
 .stat-number {
-    -fx-text-fill: #ffffff;
-
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #111820;
 }
 
 .stat-subtitle {
-    -fx-text-fill: #858e97;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 8px;
+    -fx-text-fill: #7b848d;
+}
 
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 10px;
+    -fx-background-color: #eef0f2;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #eef0f2;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #b9bec4;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #8f979f;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 0;
+    -fx-opacity: 0;
+}
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+.label {
+    -fx-font-family: "Segoe UI";
+}
+
+.button {
+    -fx-font-family: "Segoe UI";
+}
+
+.button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.main-content {
+    -fx-fill-width: true;
+}
+
+/* =========================================================
+   SMARTGYM - VISTA DE CLIENTES
+   ========================================================= */
+
+
+/* =========================================================
+   FONDO DE LA VISTA
+   ========================================================= */
+
+.client-scroll {
+    -fx-background-color: #f4f5f7;
+    -fx-border-width: 0;
+}
+
+.client-scroll > .viewport {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.client-page {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.client-header {
+    -fx-padding: 2 0 5 0;
+}
+
+.client-main-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 25px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #111820;
+}
+
+.client-main-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-text-fill: #7b848d;
+}
+
+.client-header-badge {
+    -fx-background-color: #fff0e5;
+    -fx-background-radius: 8px;
+
+    -fx-padding: 8 12 8 12;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.client-card {
+    -fx-background-color: #ffffff;
+
+    -fx-background-radius: 13px;
+
+    -fx-border-color: #e1e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 13px;
+
+    -fx-padding: 20px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.10),
+                    6,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+
+/* =========================================================
+   TITULOS DE SECCION
+   ========================================================= */
+
+.client-section-icon {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 9px;
+
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+
+    -fx-pref-width: 38px;
+    -fx-pref-height: 38px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 17px;
+
+    -fx-text-fill: #ff7600;
+}
+
+.client-section-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.client-section-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #858e96;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.client-form {
+    -fx-padding: 5 0 3 0;
+}
+
+.form-label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #414b54;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.client-field {
+
+    -fx-background-color: #f8f9fa;
+
+    -fx-border-color: #dfe3e6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 9 11 9 11;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+
+    -fx-prompt-text-fill: #a2a9af;
+}
+
+.client-field:hover {
+    -fx-border-color: #bfc6cc;
+}
+
+.client-field:focused {
+
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ff7600;
+    -fx-border-width: 1.5px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.15),
+                    5,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+
+/* =========================================================
+   BOTON PRINCIPAL
+   ========================================================= */
+
+.client-primary-button {
+
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 11 18 11 18;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.client-primary-button:hover {
+    -fx-background-color: #ff8514;
+}
+
+.client-primary-button:pressed {
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   BOTON SECUNDARIO
+   ========================================================= */
+
+.client-secondary-button {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 8px;
+
+    -fx-border-color: #ffd6bd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-padding: 10 18 10 18;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-cursor: hand;
+}
+
+.client-secondary-button:hover {
+    -fx-background-color: #ff7600;
+    -fx-border-color: #ff7600;
+    -fx-text-fill: #ffffff;
+}
+
+
+/* =========================================================
+   NUMERO PERFECTO
+   ========================================================= */
+
+.perfect-number-box {
+
+    -fx-background-color: #fafbfc;
+
+    -fx-background-radius: 9px;
+
+    -fx-border-color: #e5e8eb;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+
+    -fx-padding: 14px;
+}
+
+.perfect-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.perfect-description {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #7b848d;
+}
+
+.perfect-button {
+
+    -fx-background-color: transparent;
+
+    -fx-border-color: #ff7600;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 8 14 8 14;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-cursor: hand;
+}
+
+.perfect-button:hover {
+
+    -fx-background-color: #ff7600;
+
+    -fx-text-fill: #ffffff;
+}
+
+
+/* =========================================================
+   PIE
+   ========================================================= */
+
+.client-footer {
+
+    -fx-padding: 5 2 0 2;
+}
+
+.client-footer-brand {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+.client-footer-text {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #9aa1a7;
+}
+
+/* =========================================================
+   SMARTGYM - VISTA CLIENTES
+   ========================================================= */
+
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.client-scroll {
+    -fx-background-color: #f4f5f7;
+    -fx-border-width: 0;
+}
+
+.client-scroll > .viewport {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   PAGINA
+   ========================================================= */
+
+.client-page {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+
+.client-topbar {
+    -fx-min-height: 62px;
+    -fx-pref-height: 62px;
+
+    -fx-padding: 0 18 0 20;
+
+    -fx-background-color: #101b25;
+}
+
+
+/* LOGO */
+
+.client-logo-white {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #ffffff;
+}
+
+.client-logo-orange {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   BOTON VOLVER
+   ========================================================= */
+
+.client-back-button {
+
+    -fx-background-color: transparent;
+
+    -fx-border-color: #53606b;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 8 13 8 13;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.client-back-button:hover {
+
+    -fx-background-color: #ff7600;
+
+    -fx-border-color: #ff7600;
+}
+
+.client-back-button:pressed {
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   ENCABEZADO DE PAGINA
+   ========================================================= */
+
+.client-page-header {
+    -fx-padding: 5 0 2 0;
+}
+
+.client-main-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #111820;
+}
+
+.client-main-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.client-header-badge {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 9px;
+
+    -fx-padding: 8 14 8 14;
+
+    -fx-min-width: 80px;
+}
+
+.client-badge-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ff7600;
+}
+
+.client-badge-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 8px;
+
+    -fx-text-fill: #a56b42;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.client-card {
+
+    -fx-background-color: #ffffff;
+
+    -fx-background-radius: 14px;
+
+    -fx-border-color: #e0e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 14px;
+
+    -fx-padding: 20px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.10),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+
+/* =========================================================
+   ICONOS DE SECCION
+   ========================================================= */
+
+.client-section-icon {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 10px;
+
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 18px;
+
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   TITULOS
+   ========================================================= */
+
+.client-section-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.client-section-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #858e96;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.client-form {
+    -fx-padding: 4 0 3 0;
+}
+
+.form-label {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #3f4850;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.client-field {
+
+    -fx-background-color: #f8f9fa;
+
+    -fx-border-color: #dfe3e6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 10 12 10 12;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+
+    -fx-prompt-text-fill: #a4abb1;
+}
+
+.client-field:hover {
+
+    -fx-border-color: #bcc4ca;
+}
+
+.client-field:focused {
+
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ff7600;
+
+    -fx-border-width: 1.5px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.16),
+                    6,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+
+/* =========================================================
+   BOTON REGISTRAR
+   ========================================================= */
+
+.client-primary-button {
+
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 11 18 11 18;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.client-primary-button:hover {
+
+    -fx-background-color: #ff8514;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.25),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+.client-primary-button:pressed {
+
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   BOTON BUSCAR
+   ========================================================= */
+
+.client-secondary-button {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 8px;
+
+    -fx-border-color: #ffd5bb;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-padding: 10 20 10 20;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-cursor: hand;
+}
+
+.client-secondary-button:hover {
+
+    -fx-background-color: #ff7600;
+
+    -fx-border-color: #ff7600;
+
+    -fx-text-fill: #ffffff;
+}
+
+.client-secondary-button:pressed {
+
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   NUMERO PERFECTO
+   ========================================================= */
+
+.perfect-number-box {
+
+    -fx-background-color: #fafbfc;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #e4e8eb;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 14px;
+}
+
+
+/* ICONO */
+
+.perfect-icon {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+
+    -fx-pref-width: 34px;
+    -fx-pref-height: 34px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+
+/* TITULO */
+
+.perfect-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+
+/* DESCRIPCION */
+
+.perfect-description {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* BOTON */
+
+.perfect-button {
+
+    -fx-background-color: transparent;
+
+    -fx-border-color: #ff7600;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 8 13 8 13;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+
+    -fx-cursor: hand;
+}
+
+.perfect-button:hover {
+
+    -fx-background-color: #ff7600;
+
+    -fx-text-fill: #ffffff;
+}
+
+.perfect-button:pressed {
+
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   INFORMACION
+   ========================================================= */
+
+.client-info-box {
+
+    -fx-background-color: #eef5f8;
+
+    -fx-background-radius: 9px;
+
+    -fx-border-color: #dce8ed;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+
+    -fx-padding: 10 13 10 13;
+}
+
+.info-icon {
+
+    -fx-background-color: #607d8b;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+}
+
+.info-text {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #60717b;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.client-footer {
+
+    -fx-padding: 3 2 0 2;
+}
+
+.client-footer-brand {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+.client-footer-text {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #9aa1a7;
+}
+
+/* =========================================================
+   SMARTGYM - VISTA PLANES
+   ========================================================= */
+
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.plan-scroll {
+    -fx-background-color: #f4f5f7;
+    -fx-border-width: 0;
+}
+
+.plan-scroll > .viewport {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   PAGINA
+   ========================================================= */
+
+.plan-page {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+
+.plan-topbar {
+
+    -fx-min-height: 62px;
+    -fx-pref-height: 62px;
+
+    -fx-padding: 0 18 0 20;
+
+    -fx-background-color: #101b25;
+}
+
+
+/* LOGO */
+
+.plan-logo-white {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ffffff;
+}
+
+.plan-logo-orange {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   BOTON VOLVER
+   ========================================================= */
+
+.plan-back-button {
+
+    -fx-background-color: transparent;
+
+    -fx-border-color: #53606b;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 8 13 8 13;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.plan-back-button:hover {
+
+    -fx-background-color: #ff7600;
+
+    -fx-border-color: #ff7600;
+}
+
+.plan-back-button:pressed {
+
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.plan-page-header {
+
+    -fx-padding: 5 0 2 0;
+}
+
+.plan-main-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #111820;
+}
+
+.plan-main-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.plan-header-badge {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 9px;
+
+    -fx-padding: 8 14 8 14;
+
+    -fx-min-width: 80px;
+}
+
+.plan-badge-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ff7600;
+}
+
+.plan-badge-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 8px;
+
+    -fx-text-fill: #a56b42;
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+   ========================================================= */
+
+.plan-card {
+
+    -fx-background-color: #ffffff;
+
+    -fx-background-radius: 14px;
+
+    -fx-border-color: #e0e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 14px;
+
+    -fx-padding: 20px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.10),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+
+/* =========================================================
+   TITULO DE SECCION
+   ========================================================= */
+
+.plan-section-icon {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 10px;
+
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 17px;
+
+    -fx-text-fill: #ff7600;
+}
+
+.plan-section-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.plan-section-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #858e96;
+}
+
+
+/* =========================================================
+   SELECTOR DE TIPO
+   ========================================================= */
+
+.plan-type-box {
+
+    -fx-background-color: #fff8f3;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #ffe0cd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 14px;
+}
+
+.plan-type-label {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #343d45;
+}
+
+
+/* =========================================================
+   COMBOBOX
+   ========================================================= */
+
+.plan-combo {
+
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ffd2b5;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 3px;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+}
+
+.plan-combo:hover {
+
+    -fx-border-color: #ff7600;
+}
+
+.plan-combo:focused {
+
+    -fx-border-color: #ff7600;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.15),
+                    5,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+.plan-help-text {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #a27658;
+}
+
+
+/* =========================================================
+   SUBSECCION
+   ========================================================= */
+
+.plan-subsection-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.plan-subsection-info {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #9aa1a7;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.plan-form {
+    -fx-padding: 0 0 3 0;
+}
+
+.plan-form-label {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #3f4850;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.plan-field {
+
+    -fx-background-color: #f8f9fa;
+
+    -fx-border-color: #dfe3e6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 10 12 10 12;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+
+    -fx-prompt-text-fill: #a4abb1;
+}
+
+.plan-field:hover {
+
+    -fx-border-color: #bcc4ca;
+}
+
+.plan-field:focused {
+
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ff7600;
+
+    -fx-border-width: 1.5px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.16),
+                    6,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+
+/* =========================================================
+   CAMPOS DESHABILITADOS
+   ========================================================= */
+
+.plan-field:disabled {
+
+    -fx-background-color: #eef0f2;
+
+    -fx-border-color: #e0e3e5;
+
+    -fx-opacity: 0.65;
+}
+
+
+/* =========================================================
+   CONFIGURACION PERSONALIZADA
+   ========================================================= */
+
+.personalized-box {
+
+    -fx-background-color: #fafbfc;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #e3e7ea;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 15px;
+}
+
+.personalized-icon {
+
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+
+    -fx-pref-width: 34px;
+    -fx-pref-height: 34px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 13px;
+    -fx-text-fill: #ff7600;
+}
+
+.personalized-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.personalized-subtitle {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BOTON CREAR
+   ========================================================= */
+
+.plan-primary-button {
+
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 11 18 11 18;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.plan-primary-button:hover {
+
+    -fx-background-color: #ff8514;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.25),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+.plan-primary-button:pressed {
+
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   INFORMACION
+   ========================================================= */
+
+.plan-info-box {
+
+    -fx-background-color: #eef5f8;
+
+    -fx-background-radius: 9px;
+
+    -fx-border-color: #dce8ed;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+
+    -fx-padding: 11 13 11 13;
+}
+
+.plan-info-icon {
+
+    -fx-background-color: #607d8b;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+}
+
+.plan-info-title {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #45545e;
+}
+
+.plan-info-text {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #60717b;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.plan-footer {
+
+    -fx-padding: 3 2 0 2;
+}
+
+.plan-footer-brand {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+.plan-footer-text {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #9aa1a7;
+}
+/* =========================================================
+   SMARTGYM - VISTA PLANES
+   ========================================================= */
+
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.plan-scroll {
+    -fx-background-color: #f4f5f7;
+    -fx-border-width: 0;
+}
+
+.plan-scroll > .viewport {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   PAGINA
+   ========================================================= */
+
+.plan-page {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+
+.plan-topbar {
+    -fx-min-height: 62px;
+    -fx-pref-height: 62px;
+
+    -fx-padding: 0 18 0 20;
+
+    -fx-background-color: #101b25;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.plan-logo-white {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #ffffff;
+}
+
+.plan-logo-orange {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   BOTON VOLVER
+   ========================================================= */
+
+.plan-back-button {
+    -fx-background-color: transparent;
+
+    -fx-border-color: #53606b;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 8 13 8 13;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.plan-back-button:hover {
+    -fx-background-color: #ff7600;
+    -fx-border-color: #ff7600;
+}
+
+.plan-back-button:pressed {
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.plan-page-header {
+    -fx-padding: 5 0 2 0;
+}
+
+.plan-main-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #111820;
+}
+
+.plan-main-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.plan-header-badge {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 9px;
+
+    -fx-padding: 8 14 8 14;
+
+    -fx-min-width: 80px;
+}
+
+.plan-badge-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #ff7600;
+}
+
+.plan-badge-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 8px;
+    -fx-text-fill: #a56b42;
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+   ========================================================= */
+
+.plan-card {
+    -fx-background-color: #ffffff;
+
+    -fx-background-radius: 14px;
+
+    -fx-border-color: #e0e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 14px;
+
+    -fx-padding: 20px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.10),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+
+/* =========================================================
+   TITULO DE SECCION
+   ========================================================= */
+
+.plan-section-icon {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 10px;
+
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-size: 17px;
+
+    -fx-text-fill: #ff7600;
+}
+
+.plan-section-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111820;
+}
+
+.plan-section-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-text-fill: #858e96;
+}
+
+
+/* =========================================================
+   TIPO DE PLAN
+   ========================================================= */
+
+.plan-type-box {
+    -fx-background-color: #fff8f3;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #ffe0cd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 14px;
+}
+
+
+/* =========================================================
+   ESTADO
+   ========================================================= */
+
+.plan-state-box {
+    -fx-background-color: #f7f9fa;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #e0e5e8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 14px;
+}
+
+.plan-type-label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343d45;
+}
+
+
+/* =========================================================
+   COMBOBOX
+   ========================================================= */
+
+.plan-combo {
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ffd2b5;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 3px;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+}
+
+.plan-combo:hover {
+    -fx-border-color: #ff7600;
+}
+
+.plan-combo:focused {
+    -fx-border-color: #ff7600;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.15),
+                    5,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+.plan-help-text {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+    -fx-text-fill: #a27658;
+}
+
+
+/* =========================================================
+   SUBSECCION
+   ========================================================= */
+
+.plan-subsection-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111820;
+}
+
+.plan-subsection-info {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+    -fx-text-fill: #9aa1a7;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.plan-form {
+    -fx-padding: 0 0 3 0;
+}
+
+.plan-form-label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3f4850;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.plan-field {
+    -fx-background-color: #f8f9fa;
+
+    -fx-border-color: #dfe3e6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 10 12 10 12;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+
+    -fx-prompt-text-fill: #a4abb1;
+}
+
+.plan-field:hover {
+    -fx-border-color: #bcc4ca;
+}
+
+.plan-field:focused {
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ff7600;
+    -fx-border-width: 1.5px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.16),
+                    6,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+
+/* =========================================================
+   CAMPOS DESHABILITADOS
+   ========================================================= */
+
+.plan-field:disabled {
+    -fx-background-color: #eef0f2;
+
+    -fx-border-color: #e0e3e5;
+
+    -fx-opacity: 0.65;
+}
+
+
+/* =========================================================
+   BENEFICIOS
+   ========================================================= */
+
+.benefits-box {
+    -fx-background-color: #fff8f3;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #ffe0cd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 15px;
+}
+
+.benefits-icon {
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+
+    -fx-pref-width: 34px;
+    -fx-pref-height: 34px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+}
+
+.benefits-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.benefits-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.plan-check {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #424b53;
+
+    -fx-cursor: hand;
+}
+
+.plan-check .box {
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #cbd1d5;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+
+    -fx-background-radius: 4px;
+
+    -fx-padding: 3px;
+}
+
+.plan-check:hover .box {
+    -fx-border-color: #ff7600;
+}
+
+.plan-check:selected .box {
+    -fx-background-color: #ff7600;
+
+    -fx-border-color: #ff7600;
+}
+
+.plan-check:selected .mark {
+    -fx-background-color: #ffffff;
+}
+
+
+/* =========================================================
+   CONFIGURACION PERSONALIZADA
+   ========================================================= */
+
+.personalized-box {
+    -fx-background-color: #fafbfc;
+
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #e3e7ea;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    -fx-padding: 15px;
+}
+
+.personalized-icon {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+
+    -fx-pref-width: 34px;
+    -fx-pref-height: 34px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 13px;
+
+    -fx-text-fill: #ff7600;
+}
+
+.personalized-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.personalized-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BOTON CREAR
+   ========================================================= */
+
+.plan-primary-button {
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 11 18 11 18;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.plan-primary-button:hover {
+    -fx-background-color: #ff8514;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.25),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+.plan-primary-button:pressed {
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   INFORMACION
+   ========================================================= */
+
+.plan-info-box {
+    -fx-background-color: #eef5f8;
+
+    -fx-background-radius: 9px;
+
+    -fx-border-color: #dce8ed;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+
+    -fx-padding: 11 13 11 13;
+}
+
+.plan-info-icon {
+    -fx-background-color: #607d8b;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+}
+
+.plan-info-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #45545e;
+}
+
+.plan-info-text {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #60717b;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.plan-footer {
+    -fx-padding: 3 2 0 2;
+}
+
+.plan-footer-brand {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+.plan-footer-text {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #9aa1a7;
+}
+
+/* =========================================================
+   SMARTGYM - VISTA ENTRENADORES
+   ========================================================= */
+
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.entrenador-scroll {
+    -fx-background-color: #f4f5f7;
+    -fx-border-width: 0;
+}
+
+.entrenador-scroll > .viewport {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   PAGINA
+   ========================================================= */
+
+.entrenador-page {
+    -fx-background-color: #f4f5f7;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+
+.entrenador-topbar {
+    -fx-min-height: 62px;
+    -fx-pref-height: 62px;
+
+    -fx-padding: 0 18 0 20;
+
+    -fx-background-color: #101b25;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.entrenador-logo-white {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ffffff;
+}
+
+.entrenador-logo-orange {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ff7600;
+}
+
+
+/* =========================================================
+   BOTON VOLVER
+   ========================================================= */
+
+.entrenador-back-button {
+    -fx-background-color: transparent;
+
+    -fx-border-color: #53606b;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+
+    -fx-background-radius: 7px;
+
+    -fx-padding: 8 13 8 13;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.entrenador-back-button:hover {
+    -fx-background-color: #ff7600;
+    -fx-border-color: #ff7600;
+}
+
+.entrenador-back-button:pressed {
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.entrenador-page-header {
+    -fx-padding: 5 0 2 0;
+}
+
+.entrenador-main-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #111820;
+}
+
+.entrenador-main-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #7b848d;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.entrenador-header-badge {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 9px;
+
+    -fx-padding: 8 14 8 14;
+
+    -fx-min-width: 105px;
+}
+
+.entrenador-badge-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #ff7600;
+}
+
+.entrenador-badge-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 8px;
+
+    -fx-text-fill: #a56b42;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.entrenador-card {
+    -fx-background-color: #ffffff;
+
+    -fx-background-radius: 14px;
+
+    -fx-border-color: #e0e4e7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 14px;
+
+    -fx-padding: 20px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(0, 0, 0, 0.10),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+
+/* =========================================================
+   TITULO DE SECCION
+   ========================================================= */
+
+.entrenador-section-icon {
+    -fx-background-color: #fff0e5;
+
+    -fx-background-radius: 10px;
+
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 17px;
+
+    -fx-text-fill: #ff7600;
+}
+
+.entrenador-section-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #111820;
+}
+
+.entrenador-section-subtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #858e96;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.entrenador-form {
+    -fx-padding: 3 0 3 0;
+}
+
+.entrenador-form-label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #3f4850;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.entrenador-field {
+    -fx-background-color: #f8f9fa;
+
+    -fx-border-color: #dfe3e6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 10 12 10 12;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 11px;
+
+    -fx-text-fill: #202830;
+
+    -fx-prompt-text-fill: #a4abb1;
+}
+
+.entrenador-field:hover {
+    -fx-border-color: #bcc4ca;
+}
+
+.entrenador-field:focused {
+    -fx-background-color: #ffffff;
+
+    -fx-border-color: #ff7600;
+    -fx-border-width: 1.5px;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.16),
+                    6,
+                    0.1,
+                    0,
+                    0
+            );
+}
+
+
+/* =========================================================
+   INFORMACION
+   ========================================================= */
+
+.entrenador-info-box {
+    -fx-background-color: #fff8f3;
+
+    -fx-background-radius: 9px;
+
+    -fx-border-color: #ffe0cd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+
+    -fx-padding: 11 13 11 13;
+}
+
+.entrenador-info-icon {
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 50%;
+
+    -fx-min-width: 24px;
+    -fx-min-height: 24px;
+
+    -fx-pref-width: 24px;
+    -fx-pref-height: 24px;
+
+    -fx-alignment: CENTER;
+
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+}
+
+.entrenador-info-title {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #45545e;
+}
+
+.entrenador-info-text {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #60717b;
+}
+
+
+/* =========================================================
+   BOTON PRINCIPAL
+   ========================================================= */
+
+.entrenador-primary-button {
+    -fx-background-color: #ff7600;
+
+    -fx-background-radius: 8px;
+
+    -fx-padding: 11 18 11 18;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffffff;
+
+    -fx-cursor: hand;
+}
+
+.entrenador-primary-button:hover {
+    -fx-background-color: #ff8514;
+
+    -fx-effect:
+            dropshadow(
+                    gaussian,
+                    rgba(255, 118, 0, 0.25),
+                    7,
+                    0.1,
+                    0,
+                    2
+            );
+}
+
+.entrenador-primary-button:pressed {
+    -fx-background-color: #e96800;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.entrenador-footer {
+    -fx-padding: 3 2 0 2;
+}
+
+.entrenador-footer-brand {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff7600;
+}
+
+.entrenador-footer-text {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+
+    -fx-text-fill: #9aa1a7;
+}
+
+/* =========================================================
+   SERVICIOS ADICIONALES
+   ========================================================= */
+
+.servicio-root {
+    -fx-background-color: #0b0d10;
+}
+
+.servicio-topbar {
+    -fx-background-color: #111419;
+    -fx-border-color: #24282e;
+    -fx-border-width: 0 0 1 0;
+}
+
+.servicio-logo {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+.servicio-back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d8d8d8;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 14;
+}
+
+.servicio-back-button:hover {
+    -fx-text-fill: #f28c28;
+}
+
+.servicio-scroll {
+    -fx-background-color: transparent;
+    -fx-background: #0b0d10;
+}
+
+.servicio-scroll > .viewport {
+    -fx-background-color: #0b0d10;
+}
+
+.servicio-content {
+    -fx-background-color: #0b0d10;
+}
+
+.servicio-header {
+    -fx-max-width: 520px;
+}
+
+.servicio-badge {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1.5px;
+}
+
+.servicio-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.servicio-subtitle {
+    -fx-text-fill: #92969d;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 3px;
+}
+
+.servicio-card {
+    -fx-background-color: #15181d;
+    -fx-background-radius: 14px;
+    -fx-border-color: #292d33;
+    -fx-border-radius: 14px;
+    -fx-border-width: 1px;
+    -fx-padding: 28px;
+}
+
+.servicio-card-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+
+.servicio-card-subtitle {
+    -fx-text-fill: #777c84;
+    -fx-font-size: 12px;
+}
+
+.servicio-label {
+    -fx-text-fill: #d9dce0;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.servicio-field {
+    -fx-background-color: #0f1115;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #555a62;
+    -fx-background-radius: 7px;
+    -fx-border-color: #2a2e34;
+    -fx-border-radius: 7px;
+    -fx-border-width: 1px;
+    -fx-padding: 11px;
+    -fx-font-size: 13px;
+}
+
+.servicio-field:focused {
+    -fx-border-color: #f28c28;
+}
+
+.servicio-currency {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.servicio-info-box {
+    -fx-background-color: #1b1e23;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px;
+}
+
+.servicio-info-icon {
+    -fx-background-color: #f28c28;
+    -fx-background-radius: 50%;
+    -fx-text-fill: #111111;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-alignment: CENTER;
+}
+
+.servicio-info-text {
+    -fx-text-fill: #8f949b;
     -fx-font-size: 11px;
 }
 
-
-/* =====================================================
-   MENSAJE FINAL
-   ===================================================== */
-
-.final-message {
-    -fx-padding: 12;
+.servicio-register-button {
+    -fx-background-color: #f28c28;
+    -fx-text-fill: #111111;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-padding: 13px;
+    -fx-cursor: hand;
 }
 
-.final-message-text {
-    -fx-text-fill: #ff7600;
+.servicio-register-button:hover {
+    -fx-background-color: #ff9f3d;
+}
 
-    -fx-font-size: 15px;
+.servicio-footer {
+    -fx-text-fill: #4e535a;
+    -fx-font-size: 10px;
+}
+
+/* =========================================================
+   INSCRIPCIONES
+   ========================================================= */
+
+.inscripcion-root {
+    -fx-background-color: #0b0d10;
+}
+
+.inscripcion-topbar {
+    -fx-background-color: #111419;
+    -fx-border-color: #24282e;
+    -fx-border-width: 0 0 1 0;
+}
+
+.inscripcion-logo {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+.inscripcion-back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d8d8d8;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 14;
+}
+
+.inscripcion-back-button:hover {
+    -fx-text-fill: #f28c28;
+}
+
+.inscripcion-scroll {
+    -fx-background-color: transparent;
+    -fx-background: #0b0d10;
+}
+
+.inscripcion-scroll > .viewport {
+    -fx-background-color: #0b0d10;
+}
+
+.inscripcion-content {
+    -fx-background-color: #0b0d10;
+}
+
+.inscripcion-badge {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1.5px;
+}
+
+.inscripcion-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.inscripcion-subtitle {
+    -fx-text-fill: #92969d;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 3px;
+}
+
+.inscripcion-card {
+    -fx-background-color: #15181d;
+    -fx-background-radius: 14px;
+    -fx-border-color: #292d33;
+    -fx-border-radius: 14px;
+    -fx-border-width: 1px;
+    -fx-padding: 24px;
+}
+
+.inscripcion-section-title {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.inscripcion-section-description {
+    -fx-text-fill: #777c84;
+    -fx-font-size: 12px;
+}
+
+.inscripcion-label {
+    -fx-text-fill: #d9dce0;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.inscripcion-field {
+    -fx-background-color: #0f1115;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #555a62;
+    -fx-background-radius: 7px;
+    -fx-border-color: #2a2e34;
+    -fx-border-radius: 7px;
+    -fx-border-width: 1px;
+    -fx-padding: 11px;
+    -fx-font-size: 13px;
+}
+
+.inscripcion-field:focused {
+    -fx-border-color: #f28c28;
+}
+
+.inscripcion-field-disabled {
+    -fx-background-color: #101216;
+    -fx-text-fill: #999da3;
+    -fx-prompt-text-fill: #4e535a;
+    -fx-background-radius: 7px;
+    -fx-border-color: #25292e;
+    -fx-border-radius: 7px;
+    -fx-padding: 11px;
+    -fx-font-size: 13px;
+}
+
+.inscripcion-info-box {
+    -fx-background-color: #1b1e23;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px;
+}
+
+.inscripcion-info-icon {
+    -fx-background-color: #f28c28;
+    -fx-background-radius: 50%;
+    -fx-text-fill: #111111;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-alignment: CENTER;
+}
+
+.inscripcion-info-text {
+    -fx-text-fill: #8f949b;
+    -fx-font-size: 11px;
+}
+
+.inscripcion-consult-button {
+    -fx-background-color: #252a30;
+    -fx-text-fill: #eeeeee;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-padding: 10px 16px;
+    -fx-cursor: hand;
+}
+
+.inscripcion-consult-button:hover {
+    -fx-background-color: #343a42;
+}
+
+.inscripcion-summary {
+    -fx-background-color: #1a1d22;
+    -fx-background-radius: 10px;
+    -fx-border-color: #30343a;
+    -fx-border-radius: 10px;
+    -fx-padding: 18px;
+}
+
+.inscripcion-summary-title {
+    -fx-text-fill: #f28c28;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.inscripcion-summary-text {
+    -fx-text-fill: #858a91;
+    -fx-font-size: 12px;
+    -fx-line-spacing: 2px;
+}
+
+.inscripcion-create-button {
+    -fx-background-color: #f28c28;
+    -fx-text-fill: #111111;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-padding: 14px;
+    -fx-cursor: hand;
+}
+
+.inscripcion-create-button:hover {
+    -fx-background-color: #ff9f3d;
+}
+
+.inscripcion-footer {
+    -fx-text-fill: #4e535a;
+    -fx-font-size: 10px;
+}
+
+/* =========================================================
+   ALERTAS SMARTGYM
+   ========================================================= */
+
+/* =========================================================
+   ALERTAS SMARTGYM - ESTILO DE LA INTERFAZ
+   ========================================================= */
+
+.smartgym-dialog {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e1e4e8;
+    -fx-border-width: 1px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+/* ENCABEZADO */
+
+.smartgym-dialog .header-panel {
+    -fx-background-color: #ffffff;
+    -fx-padding: 18px 20px 12px 20px;
+}
+
+.smartgym-dialog .header-panel .label {
+    -fx-text-fill: #20242a;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+/* CONTENIDO */
+
+.smartgym-dialog .content {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px 20px 18px 20px;
+}
+
+.smartgym-dialog .content .label {
+    -fx-text-fill: #666d75;
+    -fx-font-size: 13px;
+}
+
+/* BOTONES */
+
+.smartgym-dialog .button-bar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 5px 20px 18px 20px;
+}
+
+.smartgym-dialog .button {
+    -fx-background-color: #ff7600;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 9px 22px;
+    -fx-cursor: hand;
+}
+
+.smartgym-dialog .button:hover {
+    -fx-background-color: #e96800;
+}
+
+/* QUITAR EL ÍCONO AZUL DE JAVA FX */
+
+.smartgym-dialog .graphic-container {
+    -fx-background-color: transparent;
+}
+
+.smartgym-dialog .graphic-container .graphic {
+    visibility: hidden;
 }

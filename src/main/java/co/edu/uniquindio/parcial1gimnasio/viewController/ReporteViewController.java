@@ -3,10 +3,13 @@ package co.edu.uniquindio.parcial1gimnasio.viewController;
 import co.edu.uniquindio.parcial1gimnasio.controller.InscripcionController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 
 /**
  * Controlador de la vista de reportes.
@@ -16,10 +19,10 @@ public class ReporteViewController {
     private InscripcionController inscripcionController;
 
     @FXML
-    private TextField txtFechaInicio;
+    private DatePicker dpFechaInicio;
 
     @FXML
-    private TextField txtFechaFin;
+    private DatePicker dpFechaFin;
 
     @FXML
     private TextField txtIngresos;
@@ -33,49 +36,57 @@ public class ReporteViewController {
     @FXML
     private void calcularIngresos() {
 
-        try {
+        LocalDate fechaInicio =
+                dpFechaInicio.getValue();
 
-            LocalDate fechaInicio =
-                    LocalDate.parse(
-                            txtFechaInicio.getText()
-                    );
+        LocalDate fechaFin =
+                dpFechaFin.getValue();
 
-            LocalDate fechaFin =
-                    LocalDate.parse(
-                            txtFechaFin.getText()
-                    );
-
-            if (fechaFin.isBefore(fechaInicio)) {
-
-                mostrarMensaje(
-                        "Fechas inválidas",
-                        "La fecha final no puede ser anterior "
-                                + "a la fecha inicial."
-                );
-
-                return;
-            }
-
-            double ingresos =
-                    inscripcionController
-                            .calcularIngresosPorPeriodo(
-                                    fechaInicio,
-                                    fechaFin
-                            );
-
-            txtIngresos.setText(
-                    String.format("$%,.2f", ingresos)
-            );
-
-        } catch (DateTimeParseException e) {
+        // Validar que se hayan seleccionado las dos fechas
+        if (fechaInicio == null || fechaFin == null) {
 
             mostrarMensaje(
-                    "Fecha inválida",
-                    "Utilice el formato:\n"
-                            + "AAAA-MM-DD\n\n"
-                            + "Ejemplo: 2026-09-23"
+                    "Datos incompletos",
+                    "Debe seleccionar la fecha inicial y la fecha final."
             );
+
+            return;
         }
+
+        // Validar que la fecha final no sea anterior
+        if (fechaFin.isBefore(fechaInicio)) {
+
+            mostrarMensaje(
+                    "Fechas inválidas",
+                    "La fecha final no puede ser anterior "
+                            + "a la fecha inicial."
+            );
+
+            return;
+        }
+
+        // Calcular ingresos
+        double ingresos =
+                inscripcionController
+                        .calcularIngresosPorPeriodo(
+                                fechaInicio,
+                                fechaFin
+                        );
+
+        txtIngresos.setText(
+                String.format("$%,.2f", ingresos)
+        );
+    }
+
+    @FXML
+    private void volverMenu() {
+
+        Stage stage =
+                (Stage) dpFechaInicio
+                        .getScene()
+                        .getWindow();
+
+        stage.close();
     }
 
     private void mostrarMensaje(
@@ -88,6 +99,42 @@ public class ReporteViewController {
         alert.setTitle("SmartGym");
         alert.setHeaderText(titulo);
         alert.setContentText(mensaje);
+
+        DialogPane dialogPane =
+                alert.getDialogPane();
+
+        dialogPane.getStylesheets().add(
+                getClass()
+                        .getResource(
+                                "/co/edu/uniquindio/parcial1gimnasio/styles.css"
+                        )
+                        .toExternalForm()
+        );
+
+        dialogPane.getStyleClass().add(
+                "smartgym-dialog"
+        );
+
+        dialogPane.setGraphic(null);
+
+        alert.setOnShown(event -> {
+
+            Stage alertStage =
+                    (Stage) alert.getDialogPane()
+                            .getScene()
+                            .getWindow();
+
+            Image iconoSmartGym =
+                    new Image(
+                            getClass().getResourceAsStream(
+                                    "/co/edu/uniquindio/parcial1gimnasio/logo_mancuerna_smartgym.png"
+                            )
+                    );
+
+            alertStage.getIcons().add(
+                    iconoSmartGym
+            );
+        });
 
         alert.showAndWait();
     }

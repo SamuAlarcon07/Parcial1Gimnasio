@@ -1,47 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.control.ScrollPane?>
+        <?import javafx.scene.control.Separator?>
+        <?import javafx.scene.control.TableColumn?>
+        <?import javafx.scene.control.TableView?>
+        <?import javafx.scene.effect.GaussianBlur?>
+        <?import javafx.scene.image.Image?>
+        <?import javafx.scene.image.ImageView?>
+        <?import javafx.scene.layout.BorderPane?>
+        <?import javafx.scene.layout.ColumnConstraints?>
+        <?import javafx.scene.layout.GridPane?>
+        <?import javafx.scene.layout.HBox?>
+        <?import javafx.scene.layout.Region?>
+        <?import javafx.scene.layout.RowConstraints?>
+        <?import javafx.scene.layout.StackPane?>
+        <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.MainViewController"
             stylesheets="@styles.css">
 
-
-    <!-- ================================================= -->
+    <!-- ========================================================= -->
     <!-- SIDEBAR -->
-    <!-- ================================================= -->
+    <!-- ========================================================= -->
 
     <left>
 
-        <VBox prefWidth="235"
-              minWidth="235"
-              maxWidth="235"
-              styleClass="sidebar"
-              spacing="8">
+        <VBox styleClass="sidebar"
+              prefWidth="215"
+              minWidth="215"
+              maxWidth="215">
 
+            <!-- ================================================= -->
             <!-- LOGO -->
+            <!-- ================================================= -->
 
-            <VBox spacing="2"
+            <VBox spacing="3"
                   styleClass="logo-container">
 
-                <HBox alignment="CENTER_LEFT">
+                <HBox alignment="CENTER_LEFT"
+                      spacing="7">
 
-                    <Label text="Smart"
-                           styleClass="logo"/>
+                    <ImageView fx:id="imgLogo"
+                               fitWidth="34"
+                               fitHeight="34"
+                               preserveRatio="true"
+                               smooth="true">
 
-                    <Label text="Gym"
-                           styleClass="logo-orange"/>
+                        <image>
+                            <Image url="@logo_mancuerna_smartgym.png"/>
+                        </image>
+
+                    </ImageView>
+
+                    <HBox spacing="0">
+
+                        <Label text="Smart"
+                               styleClass="logo"/>
+
+                        <Label text="Gym"
+                               styleClass="logo-orange"/>
+
+                    </HBox>
 
                 </HBox>
 
@@ -54,111 +77,145 @@
             </VBox>
 
 
-            <!-- NAVEGACIÓN -->
+            <!-- ================================================= -->
+            <!-- MENU -->
+            <!-- ================================================= -->
 
-            <Button text="⌂   Inicio"
-                    styleClass="menu-button-active"
-                    prefWidth="205"
-                    maxWidth="205"/>
+            <VBox spacing="7"
+                  styleClass="sidebar-menu">
 
-            <Button text="👥   Clientes"
-                    onAction="#abrirClientes"
-                    styleClass="menu-button"
-                    prefWidth="205"
-                    maxWidth="205"/>
+                <Button text="⌂   Inicio"
+                        styleClass="menu-button-active"
+                        maxWidth="Infinity"/>
 
-            <Button text="🏋   Planes"
-                    onAction="#abrirPlanes"
-                    styleClass="menu-button"
-                    prefWidth="205"
-                    maxWidth="205"/>
+                <Button text="♟   Clientes"
+                        onAction="#abrirClientes"
+                        styleClass="menu-button"
+                        maxWidth="Infinity"/>
 
-            <Button text="👤   Entrenadores"
-                    onAction="#abrirEntrenadores"
-                    styleClass="menu-button"
-                    prefWidth="205"
-                    maxWidth="205"/>
+                <Button text="⚒   Planes"
+                        onAction="#abrirPlanes"
+                        styleClass="menu-button"
+                        maxWidth="Infinity"/>
 
-            <Button text="⚙   Servicios"
-                    onAction="#abrirServicios"
-                    styleClass="menu-button"
-                    prefWidth="205"
-                    maxWidth="205"/>
+                <Button text="♟   Entrenadores"
+                        onAction="#abrirEntrenadores"
+                        styleClass="menu-button"
+                        maxWidth="Infinity"/>
 
-            <Button text="✓   Inscripciones"
-                    onAction="#abrirInscripciones"
-                    styleClass="menu-button"
-                    prefWidth="205"
-                    maxWidth="205"/>
+                <Button text="⚙   Servicios"
+                        onAction="#abrirServicios"
+                        styleClass="menu-button"
+                        maxWidth="Infinity"/>
 
-            <Button text="▥   Reportes"
-                    onAction="#abrirReportes"
-                    styleClass="menu-button"
-                    prefWidth="205"
-                    maxWidth="205"/>
+                <Button text="✓   Inscripciones"
+                        onAction="#abrirInscripciones"
+                        styleClass="menu-button"
+                        maxWidth="Infinity"/>
 
-
-            <!-- ESPACIO -->
-
-            <VBox VBox.vgrow="ALWAYS"/>
-
-
-            <!-- FRASE -->
-
-            <VBox spacing="3"
-                  styleClass="sidebar-quote">
-
-                <Label text="DISCIPLINA"
-                       styleClass="sidebar-phrase"/>
-
-                <Label text="SALUD"
-                       styleClass="sidebar-phrase"/>
-
-                <Label text="BIENESTAR"
-                       styleClass="sidebar-phrase-orange"/>
-
-                <Label text="―"
-                       styleClass="sidebar-line"/>
+                <Button text="▥   Reportes"
+                        onAction="#abrirReportes"
+                        styleClass="menu-button"
+                        maxWidth="Infinity"/>
 
             </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- ESPACIO FLEXIBLE -->
+            <!-- ================================================= -->
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+
+            <!-- ================================================= -->
+            <!-- IMAGEN INFERIOR DEL SIDEBAR -->
+            <!-- ================================================= -->
+
+            <StackPane styleClass="sidebar-photo">
+
+                <ImageView fx:id="imgSidebar"
+                           fitWidth="215"
+                           fitHeight="270"
+                           preserveRatio="false"
+                           smooth="true"
+                           mouseTransparent="true"
+                           pickOnBounds="false">
+
+                    <image>
+                        <Image url="@sidebar-gym.png"/>
+                    </image>
+
+                    <effect>
+                        <GaussianBlur radius="2.5"/>
+                    </effect>
+
+                </ImageView>
+
+
+                <Region styleClass="sidebar-photo-overlay"
+                        mouseTransparent="true"/>
+
+
+                <VBox alignment="BOTTOM_LEFT"
+                      styleClass="sidebar-photo-content">
+
+                    <Label text="DISCIPLINA"
+                           styleClass="sidebar-photo-title"/>
+
+                    <Label text="SALUD"
+                           styleClass="sidebar-photo-title"/>
+
+                    <Label text="BIENESTAR"
+                           styleClass="sidebar-photo-orange"/>
+
+                    <Label text="━━"
+                           styleClass="sidebar-photo-line"/>
+
+                </VBox>
+
+            </StackPane>
 
         </VBox>
 
     </left>
 
 
-    <!-- ================================================= -->
+    <!-- ========================================================= -->
     <!-- CONTENIDO PRINCIPAL -->
-    <!-- ================================================= -->
+    <!-- ========================================================= -->
 
     <center>
 
         <ScrollPane fitToWidth="true"
+                    fitToHeight="true"
                     hbarPolicy="NEVER"
                     vbarPolicy="AS_NEEDED"
                     styleClass="main-scroll">
 
-            <VBox spacing="18"
-                  fillWidth="true"
-                  styleClass="main-content">
+            <VBox styleClass="main-content"
+                  fillWidth="true">
 
 
                 <!-- ================================================= -->
                 <!-- HEADER -->
                 <!-- ================================================= -->
 
-                <HBox alignment="CENTER_RIGHT"
-                      spacing="18"
-                      maxWidth="Infinity"
-                      styleClass="top-header">
+                <HBox styleClass="top-header"
+                      alignment="CENTER_RIGHT">
 
-                    <Label text="●  Usuario: Administrador"
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Label text="●    Usuario: Administrador"
                            styleClass="header-text"/>
 
-                    <Label text="│"
-                           styleClass="header-separator"/>
+                    <Separator orientation="VERTICAL"
+                               styleClass="header-separator"/>
 
-                    <Label text="▣  23 de septiembre de 2026"
+                    <!-- FECHA Y HORA FUNCIONAL -->
+
+                    <Label fx:id="lblFechaHora"
+                           text="Cargando..."
                            styleClass="header-text"/>
 
                 </HBox>
@@ -168,20 +225,13 @@
                 <!-- HERO -->
                 <!-- ================================================= -->
 
-                <StackPane styleClass="hero"
-                           minWidth="0"
-                           maxWidth="Infinity">
-
-
-                    <!-- ================================================= -->
-                    <!-- IMAGEN DE FONDO -->
-                    <!-- ================================================= -->
+                <StackPane styleClass="hero">
 
                     <ImageView fx:id="imgBanner"
-                               managed="false"
-                               preserveRatio="true"
+                               preserveRatio="false"
                                smooth="true"
-                               mouseTransparent="true">
+                               mouseTransparent="true"
+                               pickOnBounds="false">
 
                         <image>
                             <Image url="@banner.png"/>
@@ -190,27 +240,15 @@
                     </ImageView>
 
 
-                    <!-- ================================================= -->
-                    <!-- CAPA OSCURA -->
-                    <!-- ================================================= -->
-
                     <Region styleClass="hero-overlay"
                             mouseTransparent="true"/>
 
 
-                    <!-- ================================================= -->
-                    <!-- CONTENIDO DEL HERO -->
-                    <!-- ================================================= -->
-
-                    <HBox spacing="35"
-                          fillHeight="true"
+                    <HBox alignment="CENTER_LEFT"
                           styleClass="hero-content">
 
-
-                        <!-- TEXTO IZQUIERDO -->
-
-                        <VBox spacing="9"
-                              HBox.hgrow="ALWAYS">
+                        <VBox spacing="8"
+                              maxWidth="520">
 
                             <Label text="BIENVENIDO A"
                                    styleClass="hero-title-small"/>
@@ -225,13 +263,11 @@
 
                             </HBox>
 
-                            <Label text="Gestiona tus clientes, planes,"
+                            <Label text="Gestiona tus clientes, planes, entrenadores&#10;y mucho más, todo en un solo lugar."
+                                   wrapText="true"
                                    styleClass="hero-description"/>
 
-                            <Label text="entrenadores y mucho más, todo en un solo lugar."
-                                   styleClass="hero-description"/>
-
-                            <Label text="―"
+                            <Label text="━"
                                    styleClass="orange-line"/>
 
                             <Label text="“Un cuerpo sano, una mente más fuerte.”"
@@ -239,29 +275,7 @@
 
                         </VBox>
 
-
-                        <!-- PANEL DERECHO -->
-
-                        <VBox alignment="CENTER"
-                              spacing="3"
-                              prefWidth="220"
-                              minWidth="190"
-                              maxWidth="250"
-                              styleClass="hero-visual">
-
-                            <Label text="DISCIPLINA"
-                                   styleClass="hero-visual-text"/>
-
-                            <Label text="RESULTADOS"
-                                   styleClass="hero-visual-orange"/>
-
-                            <Label text="BIENESTAR"
-                                   styleClass="hero-visual-text"/>
-
-                            <Label text="―"
-                                   styleClass="hero-visual-line"/>
-
-                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
 
                     </HBox>
 
@@ -269,66 +283,59 @@
 
 
                 <!-- ================================================= -->
-                <!-- MÓDULOS PRINCIPALES -->
+                <!-- MODULOS PRINCIPALES -->
                 <!-- ================================================= -->
 
                 <Label text="Módulos principales"
                        styleClass="section-title"/>
 
 
-                <GridPane hgap="14"
-                          vgap="14"
-                          minWidth="0"
-                          maxWidth="Infinity">
+                <GridPane hgap="12"
+                          vgap="12"
+                          styleClass="modules-grid">
 
                     <columnConstraints>
 
-                        <ColumnConstraints percentWidth="32.5"
-                                           hgrow="ALWAYS"
-                                           fillWidth="true"/>
+                        <ColumnConstraints percentWidth="16.66"
+                                           hgrow="ALWAYS"/>
 
-                        <ColumnConstraints percentWidth="32.5"
-                                           hgrow="ALWAYS"
-                                           fillWidth="true"/>
+                        <ColumnConstraints percentWidth="16.66"
+                                           hgrow="ALWAYS"/>
 
-                        <ColumnConstraints percentWidth="32.5"
-                                           hgrow="ALWAYS"
-                                           fillWidth="true"/>
+                        <ColumnConstraints percentWidth="16.66"
+                                           hgrow="ALWAYS"/>
+
+                        <ColumnConstraints percentWidth="16.66"
+                                           hgrow="ALWAYS"/>
+
+                        <ColumnConstraints percentWidth="16.66"
+                                           hgrow="ALWAYS"/>
+
+                        <ColumnConstraints percentWidth="16.66"
+                                           hgrow="ALWAYS"/>
 
                     </columnConstraints>
 
 
                     <!-- CLIENTES -->
 
-                    <VBox styleClass="module-card"
-                          spacing="8"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.rowIndex="0"
-                          GridPane.columnIndex="0">
+                    <VBox GridPane.columnIndex="0"
+                          styleClass="module-card"
+                          alignment="CENTER"
+                          spacing="5">
 
-                        <HBox alignment="CENTER_LEFT"
-                              spacing="12"
-                              minWidth="0">
+                        <Label text="♟"
+                               styleClass="module-icon"/>
 
-                            <Label text="👥"
-                                   styleClass="module-icon"/>
+                        <Label text="Clientes"
+                               styleClass="module-title"/>
 
-                            <VBox spacing="2"
-                                  minWidth="0"
-                                  HBox.hgrow="ALWAYS">
+                        <Label text="Registra y consulta&#10;tus clientes."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="module-description"/>
 
-                                <Label text="Clientes"
-                                       styleClass="module-title"/>
-
-                                <Label text="Registra y consulta"
-                                       styleClass="module-description"/>
-
-                            </VBox>
-
-                        </HBox>
-
-                        <Button text="→"
+                        <Button text="›"
                                 onAction="#abrirClientes"
                                 styleClass="round-button"/>
 
@@ -337,35 +344,23 @@
 
                     <!-- PLANES -->
 
-                    <VBox styleClass="module-card"
-                          spacing="8"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.rowIndex="0"
-                          GridPane.columnIndex="1">
+                    <VBox GridPane.columnIndex="1"
+                          styleClass="module-card"
+                          alignment="CENTER"
+                          spacing="5">
 
-                        <HBox alignment="CENTER_LEFT"
-                              spacing="12"
-                              minWidth="0">
+                        <Label text="⚒"
+                               styleClass="module-icon"/>
 
-                            <Label text="🏋"
-                                   styleClass="module-icon"/>
+                        <Label text="Planes"
+                               styleClass="module-title"/>
 
-                            <VBox spacing="2"
-                                  minWidth="0"
-                                  HBox.hgrow="ALWAYS">
+                        <Label text="Gestiona los planes&#10;del gimnasio."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="module-description"/>
 
-                                <Label text="Planes"
-                                       styleClass="module-title"/>
-
-                                <Label text="Gestiona los planes"
-                                       styleClass="module-description"/>
-
-                            </VBox>
-
-                        </HBox>
-
-                        <Button text="→"
+                        <Button text="›"
                                 onAction="#abrirPlanes"
                                 styleClass="round-button"/>
 
@@ -374,35 +369,23 @@
 
                     <!-- ENTRENADORES -->
 
-                    <VBox styleClass="module-card"
-                          spacing="8"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.rowIndex="0"
-                          GridPane.columnIndex="2">
+                    <VBox GridPane.columnIndex="2"
+                          styleClass="module-card"
+                          alignment="CENTER"
+                          spacing="5">
 
-                        <HBox alignment="CENTER_LEFT"
-                              spacing="12"
-                              minWidth="0">
+                        <Label text="♟"
+                               styleClass="module-icon"/>
 
-                            <Label text="👤"
-                                   styleClass="module-icon"/>
+                        <Label text="Entrenadores"
+                               styleClass="module-title"/>
 
-                            <VBox spacing="2"
-                                  minWidth="0"
-                                  HBox.hgrow="ALWAYS">
+                        <Label text="Administra los&#10;entrenadores."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="module-description"/>
 
-                                <Label text="Entrenadores"
-                                       styleClass="module-title"/>
-
-                                <Label text="Administra entrenadores"
-                                       styleClass="module-description"/>
-
-                            </VBox>
-
-                        </HBox>
-
-                        <Button text="→"
+                        <Button text="›"
                                 onAction="#abrirEntrenadores"
                                 styleClass="round-button"/>
 
@@ -411,35 +394,23 @@
 
                     <!-- SERVICIOS -->
 
-                    <VBox styleClass="module-card"
-                          spacing="8"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.rowIndex="1"
-                          GridPane.columnIndex="0">
+                    <VBox GridPane.columnIndex="3"
+                          styleClass="module-card"
+                          alignment="CENTER"
+                          spacing="5">
 
-                        <HBox alignment="CENTER_LEFT"
-                              spacing="12"
-                              minWidth="0">
+                        <Label text="⚙"
+                               styleClass="module-icon"/>
 
-                            <Label text="⚙"
-                                   styleClass="module-icon"/>
+                        <Label text="Servicios"
+                               styleClass="module-title"/>
 
-                            <VBox spacing="2"
-                                  minWidth="0"
-                                  HBox.hgrow="ALWAYS">
+                        <Label text="Servicios&#10;adicionales."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="module-description"/>
 
-                                <Label text="Servicios"
-                                       styleClass="module-title"/>
-
-                                <Label text="Servicios adicionales"
-                                       styleClass="module-description"/>
-
-                            </VBox>
-
-                        </HBox>
-
-                        <Button text="→"
+                        <Button text="›"
                                 onAction="#abrirServicios"
                                 styleClass="round-button"/>
 
@@ -448,35 +419,23 @@
 
                     <!-- INSCRIPCIONES -->
 
-                    <VBox styleClass="module-card"
-                          spacing="8"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.rowIndex="1"
-                          GridPane.columnIndex="1">
+                    <VBox GridPane.columnIndex="4"
+                          styleClass="module-card"
+                          alignment="CENTER"
+                          spacing="5">
 
-                        <HBox alignment="CENTER_LEFT"
-                              spacing="12"
-                              minWidth="0">
+                        <Label text="✓"
+                               styleClass="module-icon"/>
 
-                            <Label text="✓"
-                                   styleClass="module-icon"/>
+                        <Label text="Inscripciones"
+                               styleClass="module-title"/>
 
-                            <VBox spacing="2"
-                                  minWidth="0"
-                                  HBox.hgrow="ALWAYS">
+                        <Label text="Gestiona las&#10;inscripciones."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="module-description"/>
 
-                                <Label text="Inscripciones"
-                                       styleClass="module-title"/>
-
-                                <Label text="Gestiona las inscripciones"
-                                       styleClass="module-description"/>
-
-                            </VBox>
-
-                        </HBox>
-
-                        <Button text="→"
+                        <Button text="›"
                                 onAction="#abrirInscripciones"
                                 styleClass="round-button"/>
 
@@ -485,35 +444,23 @@
 
                     <!-- REPORTES -->
 
-                    <VBox styleClass="module-card"
-                          spacing="8"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.rowIndex="1"
-                          GridPane.columnIndex="2">
+                    <VBox GridPane.columnIndex="5"
+                          styleClass="module-card"
+                          alignment="CENTER"
+                          spacing="5">
 
-                        <HBox alignment="CENTER_LEFT"
-                              spacing="12"
-                              minWidth="0">
+                        <Label text="▥"
+                               styleClass="module-icon"/>
 
-                            <Label text="▥"
-                                   styleClass="module-icon"/>
+                        <Label text="Reportes"
+                               styleClass="module-title"/>
 
-                            <VBox spacing="2"
-                                  minWidth="0"
-                                  HBox.hgrow="ALWAYS">
+                        <Label text="Consulta ingresos&#10;y estadísticas."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="module-description"/>
 
-                                <Label text="Reportes"
-                                       styleClass="module-title"/>
-
-                                <Label text="Ingresos y estadísticas"
-                                       styleClass="module-description"/>
-
-                            </VBox>
-
-                        </HBox>
-
-                        <Button text="→"
+                        <Button text="›"
                                 onAction="#abrirReportes"
                                 styleClass="round-button"/>
 
@@ -523,138 +470,225 @@
 
 
                 <!-- ================================================= -->
-                <!-- RESUMEN GENERAL -->
+                <!-- PARTE INFERIOR -->
                 <!-- ================================================= -->
 
-                <Label text="Resumen general"
-                       styleClass="section-title"/>
-
-
-                <GridPane hgap="14"
-                          minWidth="0"
-                          maxWidth="Infinity">
+                <GridPane hgap="15"
+                          styleClass="bottom-grid"
+                          VBox.vgrow="ALWAYS">
 
                     <columnConstraints>
 
-                        <ColumnConstraints percentWidth="32.5"
-                                           hgrow="ALWAYS"
-                                           fillWidth="true"/>
+                        <ColumnConstraints percentWidth="50"
+                                           hgrow="ALWAYS"/>
 
-                        <ColumnConstraints percentWidth="32.5"
-                                           hgrow="ALWAYS"
-                                           fillWidth="true"/>
-
-                        <ColumnConstraints percentWidth="32.5"
-                                           hgrow="ALWAYS"
-                                           fillWidth="true"/>
+                        <ColumnConstraints percentWidth="50"
+                                           hgrow="ALWAYS"/>
 
                     </columnConstraints>
 
+                    <rowConstraints>
 
-                    <!-- TOTAL CLIENTES -->
+                        <RowConstraints vgrow="ALWAYS"/>
 
-                    <HBox styleClass="stat-card"
-                          spacing="15"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.columnIndex="0">
-
-                        <Label text="👥"
-                               styleClass="stat-icon"/>
-
-                        <VBox spacing="2"
-                              minWidth="0"
-                              HBox.hgrow="ALWAYS">
-
-                            <Label text="TOTAL DE CLIENTES"
-                                   styleClass="stat-title"/>
-
-                            <Label text="0"
-                                   fx:id="lblTotalClientes"
-                                   styleClass="stat-number"/>
-
-                            <Label text="Clientes registrados"
-                                   styleClass="stat-subtitle"/>
-
-                        </VBox>
-
-                    </HBox>
+                    </rowConstraints>
 
 
-                    <!-- TOTAL PLANES -->
+                    <!-- ================================================= -->
+                    <!-- ACTIVIDAD RECIENTE -->
+                    <!-- ================================================= -->
 
-                    <HBox styleClass="stat-card"
-                          spacing="15"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.columnIndex="1">
+                    <VBox GridPane.columnIndex="0"
+                          styleClass="dashboard-panel">
 
-                        <Label text="🏋"
-                               styleClass="stat-icon"/>
+                        <HBox alignment="CENTER_LEFT">
 
-                        <VBox spacing="2"
-                              minWidth="0"
-                              HBox.hgrow="ALWAYS">
+                            <Label text="◷"
+                                   styleClass="panel-icon"/>
 
-                            <Label text="PLANES DISPONIBLES"
-                                   styleClass="stat-title"/>
+                            <Label text="Actividad Reciente"
+                                   styleClass="panel-title"/>
 
-                            <Label text="0"
-                                   fx:id="lblTotalPlanes"
-                                   styleClass="stat-number"/>
+                            <Region HBox.hgrow="ALWAYS"/>
 
-                            <Label text="Planes en el sistema"
-                                   styleClass="stat-subtitle"/>
+                            <Label text="Ver todos"
+                                   styleClass="panel-link"/>
 
-                        </VBox>
-
-                    </HBox>
+                        </HBox>
 
 
-                    <!-- TOTAL INSCRIPCIONES -->
+                        <TableView fx:id="tblActividad"
+                                   VBox.vgrow="ALWAYS"
+                                   styleClass="activity-table">
 
-                    <HBox styleClass="stat-card"
-                          spacing="15"
-                          minWidth="0"
-                          maxWidth="Infinity"
-                          GridPane.columnIndex="2">
+                            <columns>
 
-                        <Label text="✓"
-                               styleClass="stat-icon"/>
+                                <TableColumn fx:id="colCliente"
+                                             text="Cliente"
+                                             prefWidth="120"/>
 
-                        <VBox spacing="2"
-                              minWidth="0"
-                              HBox.hgrow="ALWAYS">
+                                <TableColumn fx:id="colPlan"
+                                             text="Plan"
+                                             prefWidth="120"/>
 
-                            <Label text="INSCRIPCIONES"
-                                   styleClass="stat-title"/>
+                                <TableColumn fx:id="colFecha"
+                                             text="Fecha"
+                                             prefWidth="100"/>
 
-                            <Label text="0"
-                                   fx:id="lblTotalInscripciones"
-                                   styleClass="stat-number"/>
+                                <TableColumn fx:id="colValor"
+                                             text="Valor"
+                                             prefWidth="100"/>
 
-                            <Label text="Inscripciones realizadas"
-                                   styleClass="stat-subtitle"/>
+                            </columns>
 
-                        </VBox>
+                            <placeholder>
 
-                    </HBox>
+                                <Label text="No hay inscripciones recientes"/>
+
+                            </placeholder>
+
+                        </TableView>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- ESTADISTICAS -->
+                    <!-- ================================================= -->
+
+                    <VBox GridPane.columnIndex="1"
+                          styleClass="dashboard-panel">
+
+                        <HBox alignment="CENTER_LEFT">
+
+                            <Label text="▥"
+                                   styleClass="panel-icon"/>
+
+                            <Label text="Estadísticas Generales"
+                                   styleClass="panel-title"/>
+
+                            <Region HBox.hgrow="ALWAYS"/>
+
+                            <Label text="Últimos 7 días"
+                                   styleClass="filter-label"/>
+
+                        </HBox>
+
+
+                        <GridPane hgap="10"
+                                  vgap="10">
+
+                            <columnConstraints>
+
+                                <ColumnConstraints percentWidth="50"
+                                                   hgrow="ALWAYS"/>
+
+                                <ColumnConstraints percentWidth="50"
+                                                   hgrow="ALWAYS"/>
+
+                            </columnConstraints>
+
+
+                            <!-- CLIENTES -->
+
+                            <HBox GridPane.columnIndex="0"
+                                  GridPane.rowIndex="0"
+                                  styleClass="stat-box"
+                                  spacing="12">
+
+                                <Label text="♟"
+                                       styleClass="stat-icon"/>
+
+                                <VBox>
+
+                                    <Label fx:id="lblTotalClientes"
+                                           text="0"
+                                           styleClass="stat-number"/>
+
+                                    <Label text="Clientes registrados"
+                                           styleClass="stat-subtitle"/>
+
+                                </VBox>
+
+                            </HBox>
+
+
+                            <!-- PLANES -->
+
+                            <HBox GridPane.columnIndex="1"
+                                  GridPane.rowIndex="0"
+                                  styleClass="stat-box"
+                                  spacing="12">
+
+                                <Label text="⚒"
+                                       styleClass="stat-icon"/>
+
+                                <VBox>
+
+                                    <Label fx:id="lblTotalPlanes"
+                                           text="0"
+                                           styleClass="stat-number"/>
+
+                                    <Label text="Planes creados"
+                                           styleClass="stat-subtitle"/>
+
+                                </VBox>
+
+                            </HBox>
+
+
+                            <!-- INSCRIPCIONES -->
+
+                            <HBox GridPane.columnIndex="0"
+                                  GridPane.rowIndex="1"
+                                  styleClass="stat-box"
+                                  spacing="12">
+
+                                <Label text="✓"
+                                       styleClass="stat-icon"/>
+
+                                <VBox>
+
+                                    <Label fx:id="lblTotalInscripciones"
+                                           text="0"
+                                           styleClass="stat-number"/>
+
+                                    <Label text="Inscripciones"
+                                           styleClass="stat-subtitle"/>
+
+                                </VBox>
+
+                            </HBox>
+
+
+                            <!-- INGRESOS -->
+
+                            <HBox GridPane.columnIndex="1"
+                                  GridPane.rowIndex="1"
+                                  styleClass="stat-box"
+                                  spacing="12">
+
+                                <Label text="\$"
+                                       styleClass="stat-money"/>
+
+                                <VBox>
+
+                                    <Label fx:id="lblIngresos"
+                                           text="\$ 0,00"
+                                           styleClass="stat-number"/>
+
+                                    <Label text="Ingresos últimos 7 días"
+                                           styleClass="stat-subtitle"/>
+
+                                </VBox>
+
+                            </HBox>
+
+                        </GridPane>
+
+                    </VBox>
 
                 </GridPane>
-
-
-                <!-- ================================================= -->
-                <!-- MENSAJE FINAL -->
-                <!-- ================================================= -->
-
-                <HBox alignment="CENTER"
-                      styleClass="final-message">
-
-                    <Label text="🏆  Entrena hoy, construye tu mañana."
-                           styleClass="final-message-text"/>
-
-                </HBox>
-
 
             </VBox>
 

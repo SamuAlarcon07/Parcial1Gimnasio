@@ -2,102 +2,501 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.PlanViewController"
-      spacing="15">
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.PlanViewController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            stylesheets="@styles.css"
+            styleClass="plan-scroll">
 
-    <padding>
-        <Insets top="25" right="25" bottom="25" left="25"/>
-    </padding>
+    <content>
 
-    <Label text="Gestión de Planes"
-           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <VBox spacing="18"
+              styleClass="plan-page">
 
-    <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="0"
+                        right="28"
+                        bottom="30"
+                        left="28"/>
+            </padding>
 
-        <Label text="Tipo de plan:"
-               GridPane.rowIndex="0"
-               GridPane.columnIndex="0"/>
 
-        <ComboBox fx:id="cmbTipoPlan"
-                  prefWidth="220"
-                  GridPane.rowIndex="0"
-                  GridPane.columnIndex="1"/>
+            <!-- ================================================= -->
+            <!-- BARRA SUPERIOR -->
+            <!-- ================================================= -->
 
-        <Label text="Código:"
-               GridPane.rowIndex="1"
-               GridPane.columnIndex="0"/>
+            <HBox alignment="CENTER_LEFT"
+                  styleClass="plan-topbar">
 
-        <TextField fx:id="txtCodigo"
-                   GridPane.rowIndex="1"
-                   GridPane.columnIndex="1"/>
+                <HBox alignment="CENTER_LEFT"
+                      spacing="0">
 
-        <Label text="Nombre:"
-               GridPane.rowIndex="2"
-               GridPane.columnIndex="0"/>
+                    <Label text="Smart"
+                           styleClass="plan-logo-white"/>
 
-        <TextField fx:id="txtNombre"
-                   GridPane.rowIndex="2"
-                   GridPane.columnIndex="1"/>
+                    <Label text="Gym"
+                           styleClass="plan-logo-orange"/>
 
-        <Label text="Descripción:"
-               GridPane.rowIndex="3"
-               GridPane.columnIndex="0"/>
+                </HBox>
 
-        <TextField fx:id="txtDescripcion"
-                   GridPane.rowIndex="3"
-                   GridPane.columnIndex="1"/>
+                <Region HBox.hgrow="ALWAYS"/>
 
-        <Label text="Duración (meses):"
-               GridPane.rowIndex="4"
-               GridPane.columnIndex="0"/>
+                <Button text="←  Volver al menú"
+                        onAction="#volverMenu"
+                        styleClass="plan-back-button"/>
 
-        <TextField fx:id="txtDuracion"
-                   GridPane.rowIndex="4"
-                   GridPane.columnIndex="1"/>
+            </HBox>
 
-        <Label text="Valor mensual:"
-               GridPane.rowIndex="5"
-               GridPane.columnIndex="0"/>
 
-        <TextField fx:id="txtValorMensual"
-                   GridPane.rowIndex="5"
-                   GridPane.columnIndex="1"/>
+            <!-- ================================================= -->
+            <!-- ENCABEZADO -->
+            <!-- ================================================= -->
 
-        <Label text="Sesiones:"
-               GridPane.rowIndex="6"
-               GridPane.columnIndex="0"/>
+            <HBox alignment="CENTER_LEFT"
+                  spacing="15"
+                  styleClass="plan-page-header">
 
-        <TextField fx:id="txtSesiones"
-                   GridPane.rowIndex="6"
-                   GridPane.columnIndex="1"/>
+                <VBox spacing="4">
 
-        <Label text="Especialidad:"
-               GridPane.rowIndex="7"
-               GridPane.columnIndex="0"/>
+                    <Label text="Gestión de Planes"
+                           styleClass="plan-main-title"/>
 
-        <TextField fx:id="txtEspecialidad"
-                   GridPane.rowIndex="7"
-                   GridPane.columnIndex="1"/>
+                    <Label text="Crea y configura los planes de entrenamiento de SmartGym."
+                           styleClass="plan-main-subtitle"/>
 
-        <Label text="Objetivos:"
-               GridPane.rowIndex="8"
-               GridPane.columnIndex="0"/>
+                </VBox>
 
-        <TextField fx:id="txtObjetivos"
-                   GridPane.rowIndex="8"
-                   GridPane.columnIndex="1"/>
+                <Region HBox.hgrow="ALWAYS"/>
 
-    </GridPane>
+                <VBox alignment="CENTER"
+                      styleClass="plan-header-badge">
 
-    <Button text="Crear plan"
-            onAction="#crearPlan"
-            prefWidth="220"/>
+                    <Label text="PLANES"
+                           styleClass="plan-badge-title"/>
 
-</VBox>
+                    <Label text="SMARTGYM"
+                           styleClass="plan-badge-subtitle"/>
+
+                </VBox>
+
+            </HBox>
+
+
+            <!-- ================================================= -->
+            <!-- TARJETA PRINCIPAL -->
+            <!-- ================================================= -->
+
+            <VBox spacing="18"
+                  styleClass="plan-card">
+
+
+                <!-- ================================================= -->
+                <!-- TITULO -->
+                <!-- ================================================= -->
+
+                <HBox alignment="CENTER_LEFT"
+                      spacing="12">
+
+                    <Label text="▣"
+                           styleClass="plan-section-icon"/>
+
+                    <VBox spacing="2">
+
+                        <Label text="Crear nuevo plan"
+                               styleClass="plan-section-title"/>
+
+                        <Label text="Seleccione el tipo de plan y complete la información correspondiente."
+                               styleClass="plan-section-subtitle"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- TIPO Y ESTADO -->
+                <!-- ================================================= -->
+
+                <HBox spacing="12"
+                      alignment="CENTER_LEFT">
+
+
+                    <!-- TIPO -->
+
+                    <VBox spacing="7"
+                          HBox.hgrow="ALWAYS"
+                          styleClass="plan-type-box">
+
+                        <Label text="Tipo de plan"
+                               styleClass="plan-type-label"/>
+
+                        <ComboBox fx:id="cmbTipoPlan"
+                                  maxWidth="Infinity"
+                                  promptText="Seleccione un tipo"
+                                  styleClass="plan-combo"/>
+
+                        <Label text="Básico, Premium o Personalizado"
+                               styleClass="plan-help-text"/>
+
+                    </VBox>
+
+
+                    <!-- ESTADO -->
+
+                    <VBox spacing="7"
+                          HBox.hgrow="ALWAYS"
+                          styleClass="plan-state-box">
+
+                        <Label text="Estado del plan"
+                               styleClass="plan-type-label"/>
+
+                        <ComboBox fx:id="cmbEstadoPlan"
+                                  maxWidth="Infinity"
+                                  promptText="Seleccione un estado"
+                                  styleClass="plan-combo"/>
+
+                        <Label text="Activo, Suspendido o Finalizado"
+                               styleClass="plan-help-text"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- INFORMACION GENERAL -->
+                <!-- ================================================= -->
+
+                <HBox spacing="7"
+                      alignment="CENTER_LEFT">
+
+                    <Label text="Información general"
+                           styleClass="plan-subsection-title"/>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Datos comunes para todos los planes"
+                           styleClass="plan-subsection-info"/>
+
+                </HBox>
+
+
+                <GridPane hgap="15"
+                          vgap="13"
+                          styleClass="plan-form">
+
+                    <columnConstraints>
+
+                        <ColumnConstraints minWidth="125"
+                                           prefWidth="125"/>
+
+                        <ColumnConstraints hgrow="ALWAYS"/>
+
+                    </columnConstraints>
+
+
+                    <!-- CODIGO -->
+
+                    <Label text="Código"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="0"
+                           styleClass="plan-form-label"/>
+
+                    <TextField fx:id="txtCodigo"
+                               promptText="Ej. PL001"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="1"
+                               styleClass="plan-field"/>
+
+
+                    <!-- NOMBRE -->
+
+                    <Label text="Nombre"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="0"
+                           styleClass="plan-form-label"/>
+
+                    <TextField fx:id="txtNombre"
+                               promptText="Ej. Plan Premium"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="1"
+                               styleClass="plan-field"/>
+
+
+                    <!-- DESCRIPCION -->
+
+                    <Label text="Descripción"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="0"
+                           styleClass="plan-form-label"/>
+
+                    <TextField fx:id="txtDescripcion"
+                               promptText="Descripción del plan"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="1"
+                               styleClass="plan-field"/>
+
+
+                    <!-- DURACION -->
+
+                    <Label text="Duración"
+                           GridPane.rowIndex="3"
+                           GridPane.columnIndex="0"
+                           styleClass="plan-form-label"/>
+
+                    <TextField fx:id="txtDuracion"
+                               promptText="Meses"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="1"
+                               styleClass="plan-field"/>
+
+
+                    <!-- VALOR -->
+
+                    <Label text="Valor mensual"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="0"
+                           styleClass="plan-form-label"/>
+
+                    <TextField fx:id="txtValorMensual"
+                               promptText="Ej. 150000"
+                               GridPane.rowIndex="4"
+                               GridPane.columnIndex="1"
+                               styleClass="plan-field"/>
+
+                </GridPane>
+
+
+                <!-- ================================================= -->
+                <!-- BENEFICIOS -->
+                <!-- ================================================= -->
+
+                <VBox spacing="12"
+                      styleClass="benefits-box">
+
+                    <HBox alignment="CENTER_LEFT"
+                          spacing="10">
+
+                        <Label text="✓"
+                               styleClass="benefits-icon"/>
+
+                        <VBox spacing="2">
+
+                            <Label text="Beneficios incluidos"
+                                   styleClass="benefits-title"/>
+
+                            <Label text="Seleccione los beneficios que ofrece este plan."
+                                   styleClass="benefits-subtitle"/>
+
+                        </VBox>
+
+                    </HBox>
+
+
+                    <HBox spacing="12"
+                          alignment="CENTER_LEFT">
+
+                        <CheckBox fx:id="chkAccesoZonas"
+                                  text="Acceso a zonas deportivas"
+                                  styleClass="plan-check"/>
+
+                        <CheckBox fx:id="chkClasesGrupales"
+                                  text="Clases grupales"
+                                  styleClass="plan-check"/>
+
+                        <CheckBox fx:id="chkAcompanamientoEntrenador"
+                                  text="Acompañamiento de entrenador"
+                                  styleClass="plan-check"/>
+
+                    </HBox>
+
+                </VBox>
+
+
+                <!-- ================================================= -->
+                <!-- CONFIGURACION PERSONALIZADA -->
+                <!-- ================================================= -->
+
+                <VBox spacing="13"
+                      styleClass="personalized-box">
+
+                    <HBox alignment="CENTER_LEFT"
+                          spacing="10">
+
+                        <Label text="★"
+                               styleClass="personalized-icon"/>
+
+                        <VBox spacing="2">
+
+                            <Label text="Configuración personalizada"
+                                   styleClass="personalized-title"/>
+
+                            <Label text="Estos datos solo aplican al plan Personalizado."
+                                   styleClass="personalized-subtitle"/>
+
+                        </VBox>
+
+                    </HBox>
+
+
+                    <GridPane hgap="15"
+                              vgap="13">
+
+                        <columnConstraints>
+
+                            <ColumnConstraints minWidth="125"
+                                               prefWidth="125"/>
+
+                            <ColumnConstraints hgrow="ALWAYS"/>
+
+                        </columnConstraints>
+
+
+                        <!-- SESIONES -->
+
+                        <Label text="Sesiones"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="0"
+                               styleClass="plan-form-label"/>
+
+                        <TextField fx:id="txtSesiones"
+                                   promptText="Cantidad de sesiones"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"
+                                   styleClass="plan-field"/>
+
+
+                        <!-- ESPECIALIDAD -->
+
+                        <Label text="Especialidad"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="0"
+                               styleClass="plan-form-label"/>
+
+                        <TextField fx:id="txtEspecialidad"
+                                   promptText="Ej. Entrenamiento funcional"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="1"
+                                   styleClass="plan-field"/>
+
+
+                        <!-- OBJETIVOS -->
+
+                        <Label text="Objetivos"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="0"
+                               styleClass="plan-form-label"/>
+
+                        <TextField fx:id="txtObjetivos"
+                                   promptText="Objetivos del cliente"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="1"
+                                   styleClass="plan-field"/>
+
+                    </GridPane>
+
+                </VBox>
+
+
+                <!-- ================================================= -->
+                <!-- BOTONES CRUD -->
+                <!-- ================================================= -->
+
+                <HBox spacing="10"
+                      alignment="CENTER">
+
+                    <Button fx:id="btnCrear"
+                            text="✓   Crear plan"
+                            onAction="#crearPlan"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="plan-primary-button"/>
+
+                    <Button text="🔎   Buscar plan"
+                            onAction="#buscarPlan"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="plan-primary-button"/>
+
+                    <Button fx:id="btnActualizar"
+                            text="✎   Guardar cambios"
+                            onAction="#actualizarPlan"
+                            disable="true"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="plan-primary-button"/>
+
+                    <Button fx:id="btnEliminar"
+                            text="✕   Eliminar plan"
+                            onAction="#eliminarPlan"
+                            disable="true"
+                            HBox.hgrow="ALWAYS"
+                            maxWidth="Infinity"
+                            styleClass="plan-primary-button"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- INFORMACION -->
+            <!-- ================================================= -->
+
+            <HBox alignment="CENTER_LEFT"
+                  spacing="10"
+                  styleClass="plan-info-box">
+
+                <Label text="i"
+                       styleClass="plan-info-icon"/>
+
+                <VBox spacing="2">
+
+                    <Label text="Configuración de planes"
+                           styleClass="plan-info-title"/>
+
+                    <Label text="El estado y los beneficios seleccionados se almacenan junto con el plan. Los datos de sesiones, especialidad y objetivos corresponden únicamente a planes personalizados."
+                           wrapText="true"
+                           styleClass="plan-info-text"/>
+
+                </VBox>
+
+            </HBox>
+
+
+            <!-- ================================================= -->
+            <!-- FOOTER -->
+            <!-- ================================================= -->
+
+            <HBox alignment="CENTER_LEFT"
+                  styleClass="plan-footer">
+
+                <Label text="SmartGym"
+                       styleClass="plan-footer-brand"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label text="Gestión de planes"
+                       styleClass="plan-footer-text"/>
+
+            </HBox>
+
+        </VBox>
+
+    </content>
+
+</ScrollPane>

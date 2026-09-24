@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.InscripcionViewController"
+            stylesheets="@styles.css"
+            styleClass="client-root">
+
+    <!-- ================================================= -->
+    <!-- BARRA SUPERIOR -->
+    <!-- ================================================= -->
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              styleClass="client-topbar">
+
+            <Button text="‹  Volver"
+                    onAction="#volverMenu"
+                    styleClass="client-back-button"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER_RIGHT">
+
+                <Label text="SMART"
+                       styleClass="client-logo-white"/>
+
+                <Label text="GYM"
+                       styleClass="client-logo-orange"/>
+
+            </HBox>
+
+        </HBox>
+
+    </top>
+
+
+    <!-- ================================================= -->
+    <!-- CONTENIDO -->
+    <!-- ================================================= -->
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    styleClass="client-scroll">
+
+            <content>
+
+                <VBox spacing="18"
+                      styleClass="client-page">
+
+                    <padding>
+                        <Insets top="22"
+                                right="28"
+                                bottom="25"
+                                left="28"/>
+                    </padding>
+
+
+                    <!-- ================================================= -->
+                    <!-- ENCABEZADO -->
+                    <!-- ================================================= -->
+
+                    <HBox alignment="CENTER_LEFT"
+                          spacing="15"
+                          styleClass="client-page-header">
+
+                        <VBox spacing="4">
+
+                            <Label text="Gestión de inscripciones"
+                                   styleClass="client-main-title"/>
+
+                            <Label text="Registra y administra las inscripciones de los clientes a sus planes y servicios."
+                                   styleClass="client-main-subtitle"/>
+
+                        </VBox>
+
+                        <Region HBox.hgrow="ALWAYS"/>
+
+                        <VBox alignment="CENTER"
+                              styleClass="client-header-badge">
+
+                            <Label text="INSCRIPCIONES"
+                                   styleClass="client-badge-title"/>
+
+                            <Label text="Gestión"
+                                   styleClass="client-badge-subtitle"/>
+
+                        </VBox>
+
+                    </HBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- INSCRIPCIÓN EXISTENTE -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="18"
+                          styleClass="client-card">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="00"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Inscripción registrada"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Seleccione una inscripción existente para consultarla, actualizarla o eliminarla."
+                                       wrapText="true"
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <VBox spacing="5">
+
+                            <Label text="Inscripción"
+                                   styleClass="form-label"/>
+
+                            <ComboBox fx:id="cmbInscripcion"
+                                      promptText="Seleccione una inscripción"
+                                      maxWidth="Infinity"
+                                      styleClass="client-field"/>
+
+                        </VBox>
+
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="10"
+                              styleClass="client-info-box">
+
+                            <Label text="i"
+                                   styleClass="info-icon"/>
+
+                            <Label text="Al seleccionar una inscripción, sus datos se cargarán automáticamente en los campos siguientes."
+                                   wrapText="true"
+                                   styleClass="info-text"/>
+
+                        </HBox>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- CLIENTE -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="18"
+                          styleClass="client-card">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="01"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Cliente"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Selecciona el cliente que adquirirá el plan."
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <VBox spacing="5">
+
+                            <Label text="Cliente registrado"
+                                   styleClass="form-label"/>
+
+                            <ComboBox fx:id="cmbCliente"
+                                      promptText="Seleccione un cliente"
+                                      maxWidth="Infinity"
+                                      styleClass="client-field"/>
+
+                        </VBox>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- PLAN -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="18"
+                          styleClass="client-card">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="02"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Plan"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Selecciona el plan que adquirirá el cliente."
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <VBox spacing="5">
+
+                            <Label text="Plan registrado"
+                                   styleClass="form-label"/>
+
+                            <ComboBox fx:id="cmbPlan"
+                                      promptText="Seleccione un plan"
+                                      maxWidth="Infinity"
+                                      styleClass="client-field"/>
+
+                        </VBox>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- ENTRENADOR -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="18"
+                          styleClass="client-card">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="03"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Entrenador"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Solo es requerido para planes personalizados."
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <VBox spacing="5">
+
+                            <Label text="Entrenador registrado"
+                                   styleClass="form-label"/>
+
+                            <ComboBox fx:id="cmbEntrenador"
+                                      promptText="Seleccione un entrenador"
+                                      maxWidth="Infinity"
+                                      styleClass="client-field"/>
+
+                        </VBox>
+
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="10"
+                              styleClass="client-info-box">
+
+                            <Label text="i"
+                                   styleClass="info-icon"/>
+
+                            <Label text="Los planes básicos y premium no requieren entrenador."
+                                   wrapText="true"
+                                   styleClass="info-text"/>
+
+                        </HBox>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- SERVICIO ADICIONAL -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="18"
+                          styleClass="client-card">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="04"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Servicio adicional"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Opcional. Selecciona un servicio adicional si el cliente lo desea."
+                                       wrapText="true"
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <!-- SERVICIO -->
+
+                        <VBox spacing="5">
+
+                            <Label text="Servicio registrado"
+                                   styleClass="form-label"/>
+
+                            <ComboBox fx:id="cmbServicio"
+                                      promptText="Seleccione un servicio adicional"
+                                      maxWidth="Infinity"
+                                      styleClass="client-field"/>
+
+                        </VBox>
+
+
+                        <!-- NOMBRE -->
+
+                        <VBox spacing="5">
+
+                            <Label text="Nombre"
+                                   styleClass="form-label"/>
+
+                            <TextField fx:id="txtNombreServicio"
+                                       editable="false"
+                                       promptText="Nombre del servicio"
+                                       styleClass="client-field"/>
+
+                        </VBox>
+
+
+                        <!-- PRECIO -->
+
+                        <VBox spacing="5">
+
+                            <Label text="Precio"
+                                   styleClass="form-label"/>
+
+                            <HBox alignment="CENTER_LEFT"
+                                  spacing="8">
+
+                                <Label text="COP"
+                                       styleClass="client-badge-title"/>
+
+                                <TextField fx:id="txtPrecioServicio"
+                                           editable="false"
+                                           promptText="Precio del servicio"
+                                           HBox.hgrow="ALWAYS"
+                                           styleClass="client-field"/>
+
+                            </HBox>
+
+                        </VBox>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- INFORMACIÓN -->
+                    <!-- ================================================= -->
+
+                    <HBox alignment="CENTER_LEFT"
+                          spacing="10"
+                          styleClass="client-info-box">
+
+                        <Label text="i"
+                               styleClass="info-icon"/>
+
+                        <Label text="El servicio adicional seleccionado se incluirá automáticamente en el valor total de la inscripción."
+                               wrapText="true"
+                               styleClass="info-text"/>
+
+                    </HBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- BOTONES CRUD -->
+                    <!-- ================================================= -->
+
+                    <HBox spacing="10"
+                          alignment="CENTER">
+
+                        <Button fx:id="btnCrear"
+                                text="✓   Crear inscripción"
+                                onAction="#crearInscripcion"
+                                HBox.hgrow="ALWAYS"
+                                maxWidth="Infinity"
+                                styleClass="client-primary-button"/>
+
+                        <Button fx:id="btnActualizar"
+                                text="✎   Guardar cambios"
+                                onAction="#actualizarInscripcion"
+                                disable="true"
+                                HBox.hgrow="ALWAYS"
+                                maxWidth="Infinity"
+                                styleClass="client-primary-button"/>
+
+                        <Button fx:id="btnEliminar"
+                                text="✕   Eliminar"
+                                onAction="#eliminarInscripcion"
+                                disable="true"
+                                HBox.hgrow="ALWAYS"
+                                maxWidth="Infinity"
+                                styleClass="client-primary-button"/>
+
+                    </HBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- PIE -->
+                    <!-- ================================================= -->
+
+                    <HBox spacing="4"
+                          styleClass="client-footer">
+
+                        <Label text="SMARTGYM"
+                               styleClass="client-footer-brand"/>
+
+                        <Label text="•  Gestión de inscripciones"
+                               styleClass="client-footer-text"/>
+
+                    </HBox>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+</BorderPane>

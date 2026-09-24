@@ -2,59 +2,256 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.ReporteViewController"
-      spacing="15">
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.parcial1gimnasio.viewController.ReporteViewController"
+            stylesheets="@styles.css"
+            styleClass="client-root">
 
-    <padding>
-        <Insets top="25"
-                right="25"
-                bottom="25"
-                left="25"/>
-    </padding>
+    <!-- ================================================= -->
+    <!-- BARRA SUPERIOR -->
+    <!-- ================================================= -->
 
-    <Label text="Reportes"
-           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <top>
 
-    <Label text="Ingresos por período"
-           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              styleClass="client-topbar">
 
-    <GridPane hgap="10" vgap="10">
+            <Button text="‹  Volver"
+                    onAction="#volverMenu"
+                    styleClass="client-back-button"/>
 
-        <Label text="Fecha inicial:"
-               GridPane.rowIndex="0"
-               GridPane.columnIndex="0"/>
+            <Region HBox.hgrow="ALWAYS"/>
 
-        <TextField fx:id="txtFechaInicio"
-                   promptText="AAAA-MM-DD"
-                   GridPane.rowIndex="0"
-                   GridPane.columnIndex="1"/>
+            <HBox alignment="CENTER_RIGHT">
 
-        <Label text="Fecha final:"
-               GridPane.rowIndex="1"
-               GridPane.columnIndex="0"/>
+                <Label text="SMART"
+                       styleClass="client-logo-white"/>
 
-        <TextField fx:id="txtFechaFin"
-                   promptText="AAAA-MM-DD"
-                   GridPane.rowIndex="1"
-                   GridPane.columnIndex="1"/>
+                <Label text="GYM"
+                       styleClass="client-logo-orange"/>
 
-    </GridPane>
+            </HBox>
 
-    <Button text="Calcular ingresos"
-            onAction="#calcularIngresos"
-            prefWidth="220"/>
+        </HBox>
 
-    <Label text="Ingresos del período:"
-           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </top>
 
-    <TextField fx:id="txtIngresos"
-               editable="false"
-               promptText="Resultado"/>
 
-</VBox>
+    <!-- ================================================= -->
+    <!-- CONTENIDO -->
+    <!-- ================================================= -->
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    styleClass="client-scroll">
+
+            <content>
+
+                <VBox spacing="18"
+                      styleClass="client-page">
+
+                    <padding>
+                        <Insets top="22"
+                                right="28"
+                                bottom="25"
+                                left="28"/>
+                    </padding>
+
+
+                    <!-- ================================================= -->
+                    <!-- ENCABEZADO -->
+                    <!-- ================================================= -->
+
+                    <HBox alignment="CENTER_LEFT"
+                          spacing="15"
+                          styleClass="client-page-header">
+
+                        <VBox spacing="4">
+
+                            <Label text="Reportes"
+                                   styleClass="client-main-title"/>
+
+                            <Label text="Consulta los ingresos generados por las inscripciones durante un período."
+                                   styleClass="client-main-subtitle"/>
+
+                        </VBox>
+
+                        <Region HBox.hgrow="ALWAYS"/>
+
+                        <VBox alignment="CENTER"
+                              styleClass="client-header-badge">
+
+                            <Label text="REPORTES"
+                                   styleClass="client-badge-title"/>
+
+                            <Label text="Finanzas"
+                                   styleClass="client-badge-subtitle"/>
+
+                        </VBox>
+
+                    </HBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- TARJETA PRINCIPAL -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="20"
+                          styleClass="client-card">
+
+                        <!-- TITULO -->
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="✓"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Ingresos por período"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Selecciona las fechas para consultar los ingresos registrados."
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- FECHA INICIAL -->
+                        <!-- ================================================= -->
+
+                        <VBox spacing="5">
+
+                            <Label text="Fecha inicial"
+                                   styleClass="form-label"/>
+
+                            <DatePicker fx:id="dpFechaInicio"
+                                        promptText="Selecciona una fecha"
+                                        maxWidth="Infinity"
+                                        styleClass="client-field"/>
+
+                        </VBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- FECHA FINAL -->
+                        <!-- ================================================= -->
+
+                        <VBox spacing="5">
+
+                            <Label text="Fecha final"
+                                   styleClass="form-label"/>
+
+                            <DatePicker fx:id="dpFechaFin"
+                                        promptText="Selecciona una fecha"
+                                        maxWidth="Infinity"
+                                        styleClass="client-field"/>
+
+                        </VBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- INFORMACION -->
+                        <!-- ================================================= -->
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="10"
+                              styleClass="client-info-box">
+
+                            <Label text="i"
+                                   styleClass="info-icon"/>
+
+                            <Label text="Selecciona la fecha inicial y la fecha final utilizando el calendario."
+                                   wrapText="true"
+                                   styleClass="info-text"/>
+
+                        </HBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- BOTON -->
+                        <!-- ================================================= -->
+
+                        <Button text="CALCULAR INGRESOS"
+                                onAction="#calcularIngresos"
+                                maxWidth="Infinity"
+                                styleClass="client-primary-button"/>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- RESULTADO -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="12"
+                          styleClass="client-card">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="12">
+
+                            <Label text="\$"
+                                   styleClass="client-section-icon"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="Ingresos del período"
+                                       styleClass="client-section-title"/>
+
+                                <Label text="Resultado del cálculo realizado."
+                                       styleClass="client-section-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+
+                        <TextField fx:id="txtIngresos"
+                                   editable="false"
+                                   promptText="El resultado aparecerá aquí"
+                                   styleClass="client-result-field"/>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- PIE -->
+                    <!-- ================================================= -->
+
+                    <HBox spacing="4"
+                          styleClass="client-footer">
+
+                        <Label text="SMARTGYM"
+                               styleClass="client-footer-brand"/>
+
+                        <Label text="•  Reportes financieros"
+                               styleClass="client-footer-text"/>
+
+                    </HBox>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+</BorderPane>
